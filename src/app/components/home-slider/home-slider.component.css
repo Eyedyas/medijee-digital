@@ -1,0 +1,18 @@
+.home_slider_container {
+  width: 100%;
+  height: 100%;
+}
+.owl-carousel.owl-loaded {
+  display: block;
+}
+.home_slider {
+  width: 100%;
+  height: 100%;
+}
+.owl-carousel .owl-stage-outer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+}
