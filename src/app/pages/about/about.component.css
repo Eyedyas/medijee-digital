@@ -61,7 +61,7 @@ div.body {
 .feature_row {
   margin-top: 72px;
 }
-.accordion div {
+.collapse-div div {
   max-width: 90%;
   overflow: hidden;
   white-space: nowrap;
@@ -69,6 +69,7 @@ div.body {
   font-size: 20px;
   font-weight: 700;
   color: #384158;
+  cursor: pointer;
 }
 .container {
   width: 100%;
@@ -77,3 +78,12 @@ div.body {
   margin-right: auto;
   margin-left: auto;
 }
+
+.accordion_container {
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0px 1px 10px rgb(0 0 0 / 10%);
+  padding: 10px 30px;
+}
+
+

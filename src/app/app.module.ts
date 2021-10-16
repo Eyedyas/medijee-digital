@@ -50,7 +50,7 @@ import { CourseComponent } from './pages/course/course.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    CarouselModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
