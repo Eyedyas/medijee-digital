@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-popular-courses',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopularCoursesComponent implements OnInit {
 
-  constructor() { }
+  courses: any;
+  constructor(private commonSer: CommonService) {
 
-  ngOnInit(): void {
   }
 
+  ngOnInit(): void {
+    this.getCourse();
+  }
+
+  getCourse() {
+    this.commonSer.getCourses().subscribe(res => {
+      this.courses = res.Items;
+      console.log(this.courses)
+    })
+  }
 }

@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {
+  FormsModule, ReactiveFormsModule
+} from '@angular/forms';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +27,9 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BlogSingleComponent } from './pages/blog-single/blog-single.component';
 import { CourseComponent } from './pages/course/course.component';
+import { LoginComponent } from './pages/login/login.component';
+import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -44,13 +51,19 @@ import { CourseComponent } from './pages/course/course.component';
     RegisterComponent,
     PartnerComponent,
     BlogSingleComponent,
-    CourseComponent
+    CourseComponent,
+    LoginComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -23,7 +23,7 @@
                                 </li>
                             </ul>
                             <div class="top_bar_login ml-auto">
-                                <div class="login_button"><a href="#">Register or Login</a></div>
+                                    <div class="login_button"><a routerLink='/login' routerLinkActive="router-link-active">Register or Login</a></div>
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,10 @@
                 <div class="col">
                     <div class="header_content d-flex flex-row align-items-center justify-content-start">
                         <div class="logo_container">
-                            <div class="logo_text">Unic<span>at</span></div>
+                            <div class="logo_text">
+                                <img class="medijee-icon" src="../../../assets/images/medijeeIcon.png" alt="">
+                                <!-- Unic<span>at</span> -->
+                            </div>
                         </div>
                         <nav class="main_nav_contaner ml-auto">
                             <ul class="main_nav">
@@ -108,7 +111,8 @@
             <li class="menu_mm"><a routerLink='/about'>About</a></li>
             <li class="menu_mm"><a routerLink='/courses'>Courses</a></li>
             <li class="menu_mm"><a routerLink='/blogs'>Blog</a></li>
-            <li class="menu_mm"><a href="contact.html">Contact</a></li>
+            <li class="menu_mm"><a routerLink='/contact'>Contact</a></li>
+            <li class="menu_mm"><a routerLink='/login'>login</a></li>
         </ul>
     </nav>
 </div>
