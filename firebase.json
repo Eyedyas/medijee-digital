@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/medijee-digital",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

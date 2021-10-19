@@ -61,12 +61,12 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
   imports: [
     HttpClientModule,
     BrowserModule,
+    IonicModule.forRoot(),
     AppRoutingModule,
     BrowserAnimationsModule,
     CarouselModule,
     CommonModule,
     FormsModule,
-    IonicModule,
     ReactiveFormsModule
   ],
   providers: [],
