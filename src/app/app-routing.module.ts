@@ -1,3 +1,4 @@
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { CourseComponent } from './pages/course/course.component';
 import { BlogSingleComponent } from './pages/blog-single/blog-single.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -9,6 +10,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
+import { EShopComponent } from './pages/e-shop/e-shop.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'blog-single', component: BlogSingleComponent },
   { path: 'page', component: PageComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'e-shop', component: EShopComponent },
+  { path: 'product-detail/:id', component: ProductDetailComponent },
   { path: 'login', component: LoginComponent },
   { path: '**', component: HomeComponent },
 ];

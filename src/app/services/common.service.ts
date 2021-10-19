@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable, from, throwError, Subject, BehaviorSubject } from 'rxjs';
-import { map, catchError, mergeMap } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 import { HttpErrorResponse, HttpClient } from '@angular/common/http';
 import { AlertController, NavController, ToastController } from '@ionic/angular';
 import { environment } from 'src/environments/environment.prod';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,21 +18,11 @@ export class CommonService {
   public institute_id = 28;
 
 
-
   constructor(
     private http: HttpClient,
-    private toast: ToastController,
     public alertController: AlertController,
     public navCtrl: NavController
   ) { }
-
-  getinfo() {
-    const url = this.baseurl + '/info/';
-    return this.http.get(url)
-      .pipe(map((resp: any) => {
-        return resp;
-      }), catchError(this.errorHandler));
-  }
 
   errorHandler(errors: HttpErrorResponse) {
     if (errors.error instanceof ErrorEvent) {
@@ -46,7 +37,23 @@ export class CommonService {
   }
 
   getCourses() {
-    const url = 'https://edusome.azurewebsites.net/api/StudentCourses?student_id=74849';
+    const url = this.baseurl + '/StudentCourses?student_id=74849';
+    return this.http.get(url)
+      .pipe(map((resp: any) => {
+        return resp;
+      }));
+  }
+
+  getEShop() {
+    const url = this.baseurl + '/Assets?institute_id=20&branch_id=119';
+    return this.http.get(url)
+      .pipe(map((resp: any) => {
+        return resp;
+      }));
+  }
+
+  getProductDetails(productId: any) {
+    const url = this.baseurl + '/Assets?id=' + productId;
     return this.http.get(url)
       .pipe(map((resp: any) => {
         return resp;

@@ -30,6 +30,8 @@ import { CourseComponent } from './pages/course/course.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { EShopComponent } from './pages/e-shop/e-shop.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { IonicModule } from '@ionic/angular';
     BlogSingleComponent,
     CourseComponent,
     LoginComponent,
+    EShopComponent,
+    ProductDetailComponent,
   ],
   imports: [
     HttpClientModule,
