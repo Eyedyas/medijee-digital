@@ -43,8 +43,8 @@
                     <div class="row courses_row">
 
                         <!-- Course -->
-                        <div class="col-lg-6 course_col">
-                            <div class="course" *ngFor='let course of courses'>
+                        <div class="col-lg-6 course_col" *ngFor='let course of courses'>
+                            <div class="course" >
                                 <div class="course_image"><img src="../../../assets/images/course_4.jpg" alt=""></div>
                                 <div class="course_body">
                                     <h3 class="course_title"><a routerLink='/course'>{{course.course_title}}</a></h3>
@@ -116,123 +116,6 @@
                         </div>
                     </div>
 
-                    <!-- Latest Course -->
-                    <div class="sidebar_section">
-                        <div class="sidebar_section_title">Latest Courses</div>
-                        <div class="sidebar_latest">
-
-                            <!-- Latest Course -->
-                            <div class="latest d-flex flex-row align-items-start justify-content-start">
-                                <div class="latest_image">
-                                    <div><img src="../../../assets/images/latest_1.jpg" alt=""></div>
-                                </div>
-                                <div class="latest_content">
-                                    <div class="latest_title"><a routerLink='/course'>How to Design a Logo a Beginners
-                                            Course</a></div>
-                                    <div class="latest_price">Free</div>
-                                </div>
-                            </div>
-
-                            <!-- Latest Course -->
-                            <div class="latest d-flex flex-row align-items-start justify-content-start">
-                                <div class="latest_image">
-                                    <div><img src="../../../assets/images/latest_2.jpg" alt=""></div>
-                                </div>
-                                <div class="latest_content">
-                                    <div class="latest_title"><a routerLink='/course'>Photography for Beginners
-                                            Masterclass</a></div>
-                                    <div class="latest_price">$170</div>
-                                </div>
-                            </div>
-
-                            <!-- Latest Course -->
-                            <div class="latest d-flex flex-row align-items-start justify-content-start">
-                                <div class="latest_image">
-                                    <div><img src="../../../assets/images/latest_3.jpg" alt=""></div>
-                                </div>
-                                <div class="latest_content">
-                                    <div class="latest_title"><a routerLink='/course'>The Secrets of Body Language</a>
-                                    </div>
-                                    <div class="latest_price">$220</div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Gallery -->
-                    <div class="sidebar_section">
-                        <div class="sidebar_section_title">Instagram</div>
-                        <div class="sidebar_gallery">
-                            <ul
-                                class="gallery_items d-flex flex-row align-items-start justify-content-between flex-wrap">
-                                <li class="gallery_item">
-                                    <div
-                                        class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">
-                                        +</div>
-                                    <a class="colorbox" href="images/gallery_1_large.jpg">
-                                        <img src="../../../assets/images/gallery_1.jpg" alt="">
-                                    </a>
-                                </li>
-                                <li class="gallery_item">
-                                    <div
-                                        class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">
-                                        +</div>
-                                    <a class="colorbox" href="images/gallery_2_large.jpg">
-                                        <img src="../../../assets/images/gallery_2.jpg" alt="">
-                                    </a>
-                                </li>
-                                <li class="gallery_item">
-                                    <div
-                                        class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">
-                                        +</div>
-                                    <a class="colorbox" href="images/gallery_3_large.jpg">
-                                        <img src="../../../assets/images/gallery_3.jpg" alt="">
-                                    </a>
-                                </li>
-                                <li class="gallery_item">
-                                    <div
-                                        class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">
-                                        +</div>
-                                    <a class="colorbox" href="images/gallery_4_large.jpg">
-                                        <img src="../../../assets/images/gallery_4.jpg" alt="">
-                                    </a>
-                                </li>
-                                <li class="gallery_item">
-                                    <div
-                                        class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">
-                                        +</div>
-                                    <a class="colorbox" href="images/gallery_5_large.jpg">
-                                        <img src="../../../assets/images/gallery_5.jpg" alt="">
-                                    </a>
-                                </li>
-                                <li class="gallery_item">
-                                    <div
-                                        class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">
-                                        +</div>
-                                    <a class="colorbox" href="images/gallery_6_large.jpg">
-                                        <img src="../../../assets/images/gallery_6.jpg" alt="">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Tags -->
-                    <div class="sidebar_section">
-                        <div class="sidebar_section_title">Tags</div>
-                        <div class="sidebar_tags">
-                            <ul class="tags_list">
-                                <li><a href="#">creative</a></li>
-                                <li><a href="#">unique</a></li>
-                                <li><a href="#">photography</a></li>
-                                <li><a href="#">ideas</a></li>
-                                <li><a href="#">wordpress</a></li>
-                                <li><a href="#">startup</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
                     <!-- Banner -->
                     <div class="sidebar_section">
                         <div
@@ -255,8 +138,7 @@
 <!-- Newsletter -->
 
 <div class="newsletter">
-    <div class="newsletter_background parallax-window" data-parallax="scroll" data-image-src="../../../assets/images/newsletter.jpg"
-        data-speed="0.8"></div>
+    <div class="newsletter_background" style="background-image:url(../../../assets/images/newsletter_background.jpg)"></div>
     <div class="container">
         <div class="row">
             <div class="col">

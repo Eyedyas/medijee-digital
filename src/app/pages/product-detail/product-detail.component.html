@@ -497,10 +497,22 @@
                     <div class="sidebar_section">
                         <div class="sidebar_section_title">Course Feature</div>
                         <div class="sidebar_feature">
-                            <div class="course_price">₹ {{product.final_price}}/-</div>
+                            <div class="course_price">₹ {{product.final_price}}/-
+                                <ion-button class="regular-button w-100" (click)="addItemInCart(product)" *ngIf="!checkItemStatusInCart(product)">ADD TO
+                                    BAG</ion-button>
+                                <ion-button class="regular-button w-100" (click)="goToCart(product)" *ngIf="checkItemStatusInCart(product)">GO TO BAG
+                                </ion-button>
+
+                            </div>
 
                             <!-- Features -->
                             <div class="feature_list">
+
+                                <div class="feature d-flex flex-row align-items-center justify-content-start">
+                                    <div class="feature_title" >
+                                    </div>
+                                </div>
+
 
                                 <!-- Feature -->
                                 <div class="feature d-flex flex-row align-items-center justify-content-start">

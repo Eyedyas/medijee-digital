@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { Injectable, EventEmitter } from '@angular/core';
+import { Subject, Subscription, throwError } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { HttpErrorResponse, HttpClient } from '@angular/common/http';
 import { AlertController, NavController, ToastController } from '@ionic/angular';
 import { environment } from 'src/environments/environment.prod';
@@ -10,6 +10,12 @@ import { environment } from 'src/environments/environment.prod';
   providedIn: 'root'
 })
 export class CommonService {
+
+  setHeaderTitle = new EventEmitter();
+  subSetHeaderTitle: Subscription;
+
+  public headerTitle = new Subject<any>();
+  public headerTitle$ = this.headerTitle.asObservable();
 
   public iid: any = '';
 
@@ -37,7 +43,7 @@ export class CommonService {
   }
 
   getCourses() {
-    const url = this.baseurl + '/StudentCourses?student_id=74849';
+    const url = this.baseurl + '/Course?institute_id=' + environment.instituteId + '&branch_id=119';
     return this.http.get(url)
       .pipe(map((resp: any) => {
         return resp;

@@ -1,3 +1,4 @@
+import { CartComponent } from './pages/cart/cart.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { CourseComponent } from './pages/course/course.component';
 import { BlogSingleComponent } from './pages/blog-single/blog-single.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'page', component: PageComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'e-shop', component: EShopComponent },
+  { path: 'bag', component: CartComponent },
   { path: 'product-detail/:id', component: ProductDetailComponent },
   { path: 'login', component: LoginComponent },
   { path: '**', component: HomeComponent },

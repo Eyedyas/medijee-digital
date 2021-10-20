@@ -14,3 +14,40 @@ div.breadcrumbs li {
   font-size: 14px !important;
   font-weight: 400;
 }
+
+.clickable {
+  cursor: pointer;
+}
+
+.flex-me {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mb50 {
+  margin-bottom: 50px;
+}
+
+.flex-me-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+
+.flex-me-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.flex-me-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.flex-vertical {
+  display: flex;
+  align-items: center;
+}

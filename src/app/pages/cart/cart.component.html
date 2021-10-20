@@ -1,0 +1,160 @@
+<ion-grid class="container h-100 mt200 mb50">
+
+    <ion-row *ngIf="getCartItemAndValue()['quantity'] > 0">
+        <ion-col size="8">
+            <ion-card *ngFor="let qItems of cartItems; let i=index;" class="regular-border">
+                <ion-card-content>
+
+                    <ion-row>
+                        <ion-col size="3" size-lg="2" class="flex-vertical img-container">
+
+                            <div class="img-box">
+                                <img [src]="qItems.product_image" (load)="qItems.loaded = true"
+                                    [hidden]="!qItems.loaded" />
+                                <img src="assets/imgs/blank-basket.png" [hidden]="qItems.loaded">
+                            </div>
+
+
+
+                        </ion-col>
+                        <ion-col size="5" size-lg="8" style="padding: 10px;" id="title-container">
+                            <h3 style="font-size: 16px;">{{qItems.product_name}}</h3>
+                            <strong>₹ {{qItems.price}} </strong>
+                        </ion-col>
+                        <ion-col size="4" size-lg="2" id="btn-container">
+
+                            <div class="increase-decrease">
+                                <span class="flex-me">
+                                    <ion-button size="small" class="regular-button" (click)="decreasqty(qItems)">
+                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                    </ion-button>
+                                    <div class="cart-count flex-me">{{qItems.quantity}}</div>
+                                    <ion-button size="small" class="regular-button" (click)="increasqty(qItems)">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                    </ion-button>
+                                </span>
+                            </div>
+
+                        </ion-col>
+                    </ion-row>
+
+
+
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+        <ion-col size="4">
+            <ion-card class="">
+                <ion-card-content>
+
+                    <ion-row>
+                        <ion-col size="8">
+                            Total item(s)
+                        </ion-col>
+                        <ion-col size="4" class="text">
+                            {{getCartItemAndValue()['quantity']}}
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col size="8">
+                            Total amount
+                        </ion-col>
+                        <ion-col size="4" class="text">
+                            ₹{{getCartItemAndValue()['price']| number:'0.0-2'}}
+                        </ion-col>
+                    </ion-row>
+
+
+
+                    <ion-row *ngIf="user != null && productsCode.length > 0">
+                        <ion-col size="7" class="flex-vertical">
+                            Promo code
+                        </ion-col>
+                        <ion-col size="5" class="text">
+
+                            <ion-item lines="none">
+                                <ion-label>Promo Codes</ion-label>
+                                <ion-select okText="Apply" cancelText="Dismiss" placeholder="Select One"
+                                    [(ngModel)]="promo_code" (ionChange)="applyPromoCode(promo_code)">
+                                    <ion-select-option [value]="promo" *ngFor="let promo of productsCode">
+
+                                        {{promo.code_id}} - {{promo.discount}}% OFF
+
+                                    </ion-select-option>
+                                </ion-select>
+                            </ion-item>
+
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row *ngIf="promo_code.code_id">
+                        <ion-col size="8">
+                            Code {{promo_code.code_id}} applied! <br>
+                            {{ promo_code.discount }}% OFF
+                        </ion-col>
+                        <ion-col size="4" class="text">
+                            - &#x20B9;{{ getCartItemAndValue()['price'] * (promo_code.discount/100) | number:'0.0-2' }}
+                        </ion-col>
+                    </ion-row>
+
+
+
+                    <ion-row>
+                        <ion-col size="8">
+                            Tax
+                        </ion-col>
+                        <ion-col size="4" class="text">
+                            + ₹{{discountedPrice * 1.18 - discountedPrice | number:'0.0-2'}}
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col size="8">
+                            Final amount
+                        </ion-col>
+                        <ion-col size="4" class="text">
+                            ₹{{ discountedPrice * 1.18 | number:'0.0-2'}}
+                        </ion-col>
+                    </ion-row>
+
+
+
+
+
+
+
+                </ion-card-content>
+
+            </ion-card>
+
+            <ion-card class="" *ngIf="user != null && getCartItemAndValue()['quantity'] > 0">
+                <ion-card-content>
+                    <ion-button class="button" expand="block" (click)="openPaymentDetailsForm(discountedPrice * 1.18)"
+                        class="regular-button">
+                        PROCEED &nbsp;
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </ion-button>
+
+
+
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card class="not-logged-in" *ngIf="user == null && getCartItemAndValue()['quantity'] > 0">
+                <ion-card-content class="text-center">
+                    <ion-button class="button w-100" (click)="goForStudentSignup()" class="regular-button">
+                        Sign Up
+                    </ion-button> &nbsp; 
+                    <ion-button class="button w-100" (click)="goForStudentLogin()" class="regular-button">
+                        Log In
+                    </ion-button>
+                </ion-card-content>
+            </ion-card>
+
+
+
+        </ion-col>
+    </ion-row>
+
+</ion-grid>

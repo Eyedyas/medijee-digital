@@ -32,6 +32,8 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { EShopComponent } from './pages/e-shop/e-shop.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { AboutComponentComponent } from './components/about-component/about-component.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
     LoginComponent,
     EShopComponent,
     ProductDetailComponent,
+    CartComponent,
+    AboutComponentComponent,
   ],
   imports: [
     HttpClientModule,
@@ -66,7 +70,7 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
     CarouselModule,
     CommonModule,
     FormsModule,
-    IonicModule,
+    IonicModule.forRoot(),
     ReactiveFormsModule
   ],
   providers: [],

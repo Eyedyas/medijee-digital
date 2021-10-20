@@ -1,0 +1,89 @@
+.mt200 {
+  margin-top: 200px;
+}
+
+ion-button {
+  width: fit-content !important;
+  border-radius: 2px;
+}
+/* .increase-decrease { */
+
+.cart-count {
+  font-size: 18px;
+  padding: 0px 10px;
+}
+
+ion-icon {
+  font-size: 20px;
+}
+/* } */
+
+#btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-card-content {
+  padding: 5px;
+  padding-right: 10px;
+}
+
+img {
+  width: 100%;
+}
+ion-card {
+  margin: 10px;
+}
+ion-card img {
+  /* height: 200px; 
+    box-shadow: none;*/
+
+  object-fit: contain;
+  /* img{
+    } */
+}
+
+.bottom-content {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  margin: 0 auto;
+  background: #f6f6f6;
+  border-radius: 0;
+}
+
+.bottom-content .text {
+  font-weight: 600;
+  color: #8a8a8a;
+  text-align: right;
+}
+
+.regular-button {
+  --padding-start: 8px;
+  --padding-end: 8px;
+}
+
+ion-button {
+  width: 48%;
+}
+.container {
+  height: calc(92vh - 230px);
+  height: -moz-calc(92vh - 230px);
+  height: -webkit-calc(92vh - 230px);
+  overflow: auto;
+}
+
+/* ::ng-deep { */
+ion-alert .alert-wrapper {
+  --width: 100%;
+}
+/* } */
+
+.promo-code {
+  color: red;
+}
+
+.discount {
+  color: blue;
+}
