@@ -22,8 +22,10 @@ $(function () {
     
        Required attr: data-TargetNum
        Optionals attr: data-Speed(milisecons), data-Direction(reverse), data-Easing(linear, swing)
+
        **CONFIG**
        Please set a the ID's to watch, a class for all counters and a default speed
+
        Avoid to use this script in pages where it isn't needed
     */
 
