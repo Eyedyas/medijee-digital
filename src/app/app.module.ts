@@ -71,10 +71,7 @@ import { AboutComponentComponent } from './components/about-component/about-comp
     CarouselModule,
     CommonModule,
     FormsModule,
-<<<<<<< HEAD
     IonicModule.forRoot(),
-=======
->>>>>>> 102246c842ed629f910ba010595db85935003997
     ReactiveFormsModule
   ],
   providers: [],
