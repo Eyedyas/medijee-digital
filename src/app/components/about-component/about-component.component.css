@@ -11,6 +11,12 @@
   color: #2a2c39;
 }
 
+.contents{
+  box-shadow: 0px 2px 15px rgb(0 0 0 / 10%);
+  padding: 15px;
+  border-radius: 5px;
+}
+
 .section-title h2 {
   font-size: 14px;
   font-weight: 500;
@@ -30,7 +36,7 @@ p.para {
   font-family: "Open Sans", sans-serif !important;
 }
 .about {
-  padding-top: 80px;
+  padding-top: 30px;
 }
 
 .about .contents h3 {
@@ -83,15 +89,22 @@ ul.Item {
   border-radius: 5px;
   transition: 0.3s;
   line-height: 1;
-  color: #e9670e;
+  color: #2f5790;
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
   margin-top: 6px;
-  border: 2px solid #e9670e;
+  border: 2px solid #2f5790;
 }
 
 .about .contents .btn-learn-more:hover {
-  background: #e9670e;
+  background: #2f5790;
   color: #fff;
   text-decoration: none;
+}
+
+.img{
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 3px;
 }
