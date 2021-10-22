@@ -7,8 +7,8 @@
                 <div class="col">
                     <div class="breadcrumbs">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="blog.html">Blog</a></li>
+                            <li><a routerLink='/home'>Home</a></li>
+                            <li><a routerLink='/blogs'>Blog</a></li>
                             <li>Blog Single</li>
                         </ul>
                     </div>
@@ -27,15 +27,16 @@
             <!-- Blog Content -->
             <div class="col-lg-8">
                 <div class="blog_content">
-                    <div class="blog_title">‘I Kept Thinking of Antioch’: Long Before #MeToo, a times Video Journalist
-                        Remembered</div>
+                    <div class="blog_title">
+                        {{blog.abstracts}}
+                    </div>
                     <div class="blog_meta">
                         <ul>
                             <li>Post on <a href="#">May 5, 2018</a></li>
                             <li>By <a href="#">admin</a></li>
                         </ul>
                     </div>
-                    <div class="blog_image"><img src="../../../assets/images/blog_single.jpg" alt=""></div>
+                    <div class="blog_image"><img src="{{blog.full_path_banner_image}}" alt=""></div>
                     <p>Times Insider delivers behind-the-scenes insights into how news, features and opinion come
                         together at The New York Times.Before I could spend the night in my younger sister’s dorm room
                         at Antioch College in Yellow Springs, Ohio — before I could read the spines of her textbooks or

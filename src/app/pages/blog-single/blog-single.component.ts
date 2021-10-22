@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-blog-single',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogSingleComponent implements OnInit {
 
-  constructor() { }
+  pk_blog_id: number;
+  sub: any;
+  blog: any = {};
+
+
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private navCtrl: NavController,
+    private commonService: CommonService,
+    private __service: CommonService) {
+
+    this.sub = this.activatedRoute.params.subscribe(params => {
+      this.pk_blog_id = params['id'];
+      this.getBlogDetails(this.pk_blog_id);
+    });
+  }
 
   ngOnInit(): void {
+  }
+
+  getBlogDetails(pk_blog_id: number) {
+    this.commonService.getBlogDetails(pk_blog_id).subscribe(resp => {
+      this.blog = resp.Item
+      console.log('blog title: ', this.blog.abstracts)
+    });
   }
 
 }

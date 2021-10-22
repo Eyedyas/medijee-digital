@@ -31,10 +31,10 @@
                         <input type="search" class="courses_search_input" placeholder="Search Courses"
                             required="required">
                         <select id="courses_search_select" class="courses_search_select courses_search_input">
-                            <option>All Categories</option>
-                            <option>Category</option>
-                            <option>Category</option>
-                            <option>Category</option>
+                            <option>All Courses</option>
+                            <option *ngFor='let course of courses.slice(0,5)'>{{course.course_title}}</option>
+                            <!-- <option>Category</option>
+                            <option>Category</option> -->
                         </select>
                         <button action="submit" class="courses_search_button ml-auto">search now</button>
                     </form>
@@ -47,7 +47,7 @@
                             <div class="course" >
                                 <div class="course_image"><img src="../../../assets/images/course_4.jpg" alt=""></div>
                                 <div class="course_body">
-                                    <h3 class="course_title"><a routerLink='/course'>{{course.course_title}}</a></h3>
+                                    <h3 class="course_title"(click)='getCourseDetail(course)'><a>{{course.course_title}}</a></h3>
                                     <div class="course_teacher">Mr. John Taylor</div>
                                     <div class="course_text">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipi elitsed do eiusmod tempor</p>
@@ -104,14 +104,14 @@
 
                     <!-- Categories -->
                     <div class="sidebar_section">
-                        <div class="sidebar_section_title">Categories</div>
+                        <div class="sidebar_section_title">Courses</div>
                         <div class="sidebar_categories">
                             <ul>
-                                <li><a href="#">Art & Design</a></li>
-                                <li><a href="#">Business</a></li>
+                                <li *ngFor='let course of courses.slice(0,5)'><a (click)='getCourseDetail(course)'>{{ course.course_title }}</a></li>
+                                <!-- <li><a href="#">Business</a></li>
                                 <li><a href="#">IT & Software</a></li>
                                 <li><a href="#">Languages</a></li>
-                                <li><a href="#">Programming</a></li>
+                                <li><a href="#">Programming</a></li> -->
                             </ul>
                         </div>
                     </div>

@@ -1,0 +1,12 @@
+.course_title a:hover {
+  color: #14bdee;
+}
+.course_info {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #55555a;
+}
+.mt47 {
+  margin-top: 47px;
+}

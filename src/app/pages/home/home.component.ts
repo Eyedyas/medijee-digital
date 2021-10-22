@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  courses: any;
+  constructor(private commonSer: CommonService,
+    private router: Router
+  ) {
 
-  ngOnInit(): void {
   }
 
+  ngOnInit(): void {
+    this.getCourse();
+  }
+
+  getCourse() {
+    this.commonSer.getCourses().subscribe(res => {
+      this.courses = res.Items;
+      console.log("Home popular course: " + this.courses.reverse())
+    })
+  }
+  getCourseDetail(course: any) {
+    this.router.navigateByUrl('/course/' + course.pk_course_id)
+  }
 }

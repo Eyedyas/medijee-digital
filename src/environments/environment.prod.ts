@@ -6,5 +6,7 @@ export const environment = {
 
   // https://edusome.azurewebsites.net/api/Course?institute_id=20&branch_id=119
 
+  // 'https://edusome.azurewebsites.net/api/Course?id=75'
+
 
 };

@@ -49,6 +49,14 @@ export class CommonService {
         return resp;
       }));
   }
+  getBlogs() {
+    const url = this.baseurl + '/Blog?institute_id=' + environment.instituteId + '&branch_id=119';
+    return this.http.get(url)
+      .pipe(map((resp: any) => {
+        return resp;
+      }));
+  }
+
 
   getEShop() {
     const url = this.baseurl + '/Assets?institute_id=20&branch_id=119';
@@ -60,6 +68,22 @@ export class CommonService {
 
   getProductDetails(productId: any) {
     const url = this.baseurl + '/Assets?id=' + productId;
+    return this.http.get(url)
+      .pipe(map((resp: any) => {
+        return resp;
+      }));
+  }
+
+  getCourseDetails(courseId: any) {
+    const url = this.baseurl + '/Course?id=' + courseId;
+    return this.http.get(url)
+      .pipe(map((resp: any) => {
+        return resp;
+      }));
+  }
+
+  getBlogDetails(blogId: any) {
+    const url = this.baseurl + '/Blog?id=' + blogId;
     return this.http.get(url)
       .pipe(map((resp: any) => {
         return resp;

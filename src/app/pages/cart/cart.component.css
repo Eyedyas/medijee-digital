@@ -87,3 +87,6 @@ ion-alert .alert-wrapper {
 .discount {
   color: blue;
 }
+.button-solid {
+  --background: #14bdee;
+}

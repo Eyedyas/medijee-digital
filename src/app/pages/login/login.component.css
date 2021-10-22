@@ -58,3 +58,25 @@ ion-icon {
 }
 
 /* https://images.pexels.com/photos/2058152/pexels-photo-2058152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 */
+
+/* .logo span {
+  font-size: 26px;
+  font-weight: 700;
+  color: #14bdee;
+  font-family: "Nunito", sans-serif;
+} */
+
+@media screen and (min-width: 700px) {
+  section {
+    padding-top: 150px !important;
+  }
+}
+h4,
+h5 {
+  color: #384158 !important;
+}
+
+h4:hover,
+h5:hover {
+  color: #14bdee !important;
+}

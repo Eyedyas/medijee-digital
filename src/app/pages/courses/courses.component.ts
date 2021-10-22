@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { CommonService } from 'src/app/services/common.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class CoursesComponent implements OnInit {
 
   courses: any;
-  constructor(private commonSer: CommonService) {
+  constructor(private commonSer: CommonService, private router: Router) {
 
   }
 
@@ -19,9 +20,13 @@ export class CoursesComponent implements OnInit {
 
   getCourse() {
     this.commonSer.getCourses().subscribe(res => {
-      this.courses = res.Items;
+      this.courses = res.Items.reverse();
       console.log(this.courses)
     })
+  }
+
+  getCourseDetail(course: any) {
+    this.router.navigateByUrl('/course/' + course.pk_course_id)
   }
 
 }
