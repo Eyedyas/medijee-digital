@@ -80,3 +80,7 @@ h4:hover,
 h5:hover {
   color: #14bdee !important;
 }
+p a span:hover {
+  background-color: #14bdee !important;
+  border-bottom: solid 1px #14bdee !important;
+}

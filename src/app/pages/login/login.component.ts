@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   public branchId: number;
   Capture: string;
   user: any;
+  registerMode: boolean = true;
   DownloadImage = environment.DownloadImage;
 
   constructor(
