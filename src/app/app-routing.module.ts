@@ -1,3 +1,8 @@
+import { AboutMedijeeComponent } from './pages/about/about-medijee/about-medijee.component';
+import { AboutChairmanComponent } from './pages/about/about-chairman/about-chairman.component';
+import { AdmissionProcedureComponent } from './pages/school/admission-procedure/admission-procedure.component';
+import { FeeStructureComponent } from './pages/school/fee-structure/fee-structure.component';
+import { DownloadAdmissionFormComponent } from './pages/school/download-admission-form/download-admission-form.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { CourseComponent } from './pages/course/course.component';
@@ -17,6 +22,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'about-chairman', component: AboutChairmanComponent },
+  { path: 'about-medijee', component: AboutMedijeeComponent },
   { path: 'courses', component: CoursesComponent },
   { path: 'course/:id', component: CourseComponent },
   { path: 'blogs', component: BlogsComponent },
@@ -26,7 +33,11 @@ const routes: Routes = [
   { path: 'e-shop', component: EShopComponent },
   { path: 'bag', component: CartComponent },
   { path: 'product-detail/:id', component: ProductDetailComponent },
+
   { path: 'login', component: LoginComponent },
+  { path: 'fee-structure', component: FeeStructureComponent },
+  { path: 'admission-procedure', component: AdmissionProcedureComponent },
+  { path: 'admission-form', component: DownloadAdmissionFormComponent },
   { path: '**', component: HomeComponent },
 ];
 

@@ -34,6 +34,11 @@ import { EShopComponent } from './pages/e-shop/e-shop.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { AboutComponentComponent } from './components/about-component/about-component.component';
+import { FeeStructureComponent } from './pages/school/fee-structure/fee-structure.component';
+import { AdmissionProcedureComponent } from './pages/school/admission-procedure/admission-procedure.component';
+import { DownloadAdmissionFormComponent } from './pages/school/download-admission-form/download-admission-form.component';
+import { AboutChairmanComponent } from './pages/about/about-chairman/about-chairman.component';
+import { AboutMedijeeComponent } from './pages/about/about-medijee/about-medijee.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +66,11 @@ import { AboutComponentComponent } from './components/about-component/about-comp
     ProductDetailComponent,
     CartComponent,
     AboutComponentComponent,
+    FeeStructureComponent,
+    AdmissionProcedureComponent,
+    DownloadAdmissionFormComponent,
+    AboutChairmanComponent,
+    AboutMedijeeComponent,
   ],
   imports: [
     HttpClientModule,

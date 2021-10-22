@@ -35,8 +35,8 @@
     <!-- Header Content -->
     <div class="header_container">
         <div class="container">
-            <div class="row">
-                <div class="col">
+            <div class="row pr0">
+                <div class="col pr0">
                     <div class="header_content d-flex flex-row align-items-center justify-content-start">
                         <div class="logo_container">
                             <div class="logo_text">
@@ -49,8 +49,23 @@
                                 <li class=""><a routerLink='/home' routerLinkActive="router-link-active">Home</a></li>
                                 <li><a routerLink='/courses' routerLinkActive="router-link-active">Admission</a></li>
                                 <li><a routerLink='/e-shop' routerLinkActive="router-link-active">Online Store</a></li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">School</a>
+                                    <ul class="dropdown-menu main_nav">
+                                        <li><a class="dropdown-item" routerLink='/fee-structure'>Fee Structure</a></li>
+                                        <li><a class="dropdown-item" routerLink='/admission-procedure'>Admission Procedure</a></li>
+                                        <li><a class="dropdown-item" routerLink='/admission-form'> Download Admission Form</a></li>
+                                    </ul>
+                                </li>
                                 <li><a routerLink='/blogs' routerLinkActive="router-link-active">Blogs</a></li>
-                                <li><a routerLink='/about' routerLinkActive="router-link-active">About</a></li>
+                                <!-- <li><a routerLink='/about' routerLinkActive="router-link-active">About</a></li> -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">About</a>
+                                    <ul class="dropdown-menu main_nav">
+                                        <li><a class="dropdown-item" routerLink='/about-chairman'>Chairman Message</a></li>
+                                        <li><a class="dropdown-item" routerLink='/about-medijee'>Medijee</a></li>
+                                    </ul>
+                                </li>
                                 <li><a routerLink='/contact' routerLinkActive="router-link-active">Contact</a></li>
                             </ul>
                             <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>

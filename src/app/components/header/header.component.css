@@ -4,3 +4,26 @@ a.router-link-active {
 .medijee-icon {
   width: 150px !important;
 }
+@media all and (min-width: 992px) {
+  .navbar .nav-item .dropdown-menu {
+    display: none;
+  }
+  .navbar .nav-item:hover .nav-link {
+  }
+  .nav-item:hover .dropdown-menu {
+    display: block;
+  }
+  .navbar .nav-item .dropdown-menu {
+    margin-top: 0;
+  }
+}
+ul.dropdown-menu li:hover {
+  display: block !important;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+  color: #14bdee !important;
+  background-color: #f4f4f4 !important;
+}
+a.dropdown-item:hover {
+  background-color: transparent !important;
+}
