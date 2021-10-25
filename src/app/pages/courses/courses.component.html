@@ -28,15 +28,24 @@
                 <div class="courses_search_container">
                     <div id="courses_search_form"
                         class="courses_search_form d-flex flex-row align-items-center justify-content-start">
-                        <input type="text" [(ngModel)]="searchText" autocomplete="off" class="courses_search_input" placeholder="Search Courses"
-                            required="required">
-                        <select id="courses_search_select" class="courses_search_select courses_search_input">
-                            <option>All Courses</option>
-                            <option *ngFor='let course of courses.slice(0,5)'>{{course.course_title}}</option>
-                            <!-- <option>Category</option>
-                            <option>Category</option> -->
-                        </select>
-                        <button action="submit" class="courses_search_button ml-auto">search now</button>
+                        <div class="row w-100">
+                            <div class="col-md-6">
+                                <input  type="text" [(ngModel)]="searchText" autocomplete="off" class="courses_search_input w-100" placeholder="Search Courses"
+                                    required="required">
+                            </div>
+                            <div class="col-md-6">
+                                <select (change)="filterCourses($event)" [(ngModel)]="searchTextEl" id="courses_search_select"
+                                    class="w-100 courses_search_select courses_search_input">
+                                    <option value="" selected>All Courses</option>
+                                    <option *ngFor='let course of courses.slice(0,5)' [ngValue]="course.course_title">{{course.course_title}}</option>
+                                    <!-- <option>Category</option>
+                                                            <option>Category</option> -->
+                                </select>
+                            </div>
+                        </div>
+                        
+                       
+                        <!-- <button action="submit" class="courses_search_button ml-auto">search now</button> -->
                     </div>
                 </div>
                 <div class="courses_container">
@@ -44,7 +53,7 @@
 
 
                         <!-- Course -->
-                        <div class="col-lg-6 course_col" *ngFor='let course of courses | filter:searchText'>
+                        <div class="col-lg-6 course_col" *ngFor='let course of courses | filter:searchText | filter: searchTextEl'>
                             <div class="course" >
                                 <div class="course_image">
                                     <!-- <img src="../../../assets/images/course_4.jpg" alt=""> -->

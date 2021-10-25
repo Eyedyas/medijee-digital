@@ -1,3 +1,4 @@
+import { StackholderComponent } from './pages/stackholder/stackholder.component';
 import { AboutMedijeeComponent } from './pages/about/about-medijee/about-medijee.component';
 import { AboutChairmanComponent } from './pages/about/about-chairman/about-chairman.component';
 import { AdmissionProcedureComponent } from './pages/school/admission-procedure/admission-procedure.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'product-detail/:id', component: ProductDetailComponent },
 
   { path: 'login', component: LoginComponent },
+  { path: 'stackholder', component: StackholderComponent },
   { path: 'fee-structure', component: FeeStructureComponent },
   { path: 'admission-procedure', component: AdmissionProcedureComponent },
   { path: 'admission-form', component: DownloadAdmissionFormComponent },

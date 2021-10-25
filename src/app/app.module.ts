@@ -40,6 +40,7 @@ import { DownloadAdmissionFormComponent } from './pages/school/download-admissio
 import { AboutChairmanComponent } from './pages/about/about-chairman/about-chairman.component';
 import { AboutMedijeeComponent } from './pages/about/about-medijee/about-medijee.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { StackholderComponent } from './pages/stackholder/stackholder.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     DownloadAdmissionFormComponent,
     AboutChairmanComponent,
     AboutMedijeeComponent,
+    StackholderComponent,
   ],
   imports: [
     HttpClientModule,

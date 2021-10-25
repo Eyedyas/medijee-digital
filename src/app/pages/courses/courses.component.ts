@@ -9,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent implements OnInit {
 
-  searchText: any;
+  searchTextEl: any = '';
+  searchText: any = '';
   courses: any;
   constructor(private commonSer: CommonService, private router: Router) {
 
@@ -30,4 +31,11 @@ export class CoursesComponent implements OnInit {
     this.router.navigateByUrl('/course/' + course.pk_course_id)
   }
 
+  filterCourses(event: any) {
+    if (event.target.value == '') {
+      this.searchTextEl = '';
+      this.searchText = '';
+    }
+
+  }
 }
