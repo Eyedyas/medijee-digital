@@ -292,7 +292,7 @@ section {
 .login_button {
   width: 160px;
   height: 100%;
-  background: #f3f3f3;
+  background: #0da8d5 !important;
   text-align: center;
 }
 .login_button a {
@@ -300,7 +300,7 @@ section {
   font-size: 14px;
   font-weight: 500;
   line-height: 40px;
-  color: #384158;
+  color:#fff !important;
 }
 
 /*********************************
@@ -387,7 +387,7 @@ section {
   margin-right: 44px;
 }
 .main_nav li a {
-  font-size: 18px;
+  font-size: 16px !important;
   font-weight: 500;
   color: #384158;
   -webkit-transition: all 200ms ease;

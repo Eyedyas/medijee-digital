@@ -7,3 +7,15 @@ ul {
 a:hover {
   color: #14bdee !important;
 }
+
+.news_post_small_title {
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #384158;
+}
+
+.news_post_small{
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
