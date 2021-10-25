@@ -12,6 +12,11 @@ export class EShopComponent implements OnInit {
 
   eShop: any;
   imageUrl: any = environment.DownloadImage;
+
+  searchTextEl: any = '';
+  searchText: any = '';
+
+
   constructor(private commonSer: CommonService,
     private router: Router
   ) {

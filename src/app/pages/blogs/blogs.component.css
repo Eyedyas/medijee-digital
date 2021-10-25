@@ -7,7 +7,7 @@
 {
 	width: 100%;
 	background: #FFFFFF;
-	padding-top: 100px;
+	padding-top: 30px;
 	padding-bottom: 100px;
 }
 .blog_post_container
@@ -143,4 +143,12 @@
 	color: #FFFFFF;
 	text-transform: uppercase;
 	font-weight: 500;
+}
+
+
+@media only screen and (max-width: 767px)
+{
+	.blog_post{
+		margin: auto;
+	}
 }
