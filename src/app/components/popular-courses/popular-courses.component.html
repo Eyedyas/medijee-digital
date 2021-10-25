@@ -20,7 +20,12 @@
             <!-- Course -->
             <div class="col-lg-4 mb-3 course_col" *ngFor='let course of courses'>
                 <div class="course" > 
-                    <div class="course_image"><img src="../../../assets/images/course_1.jpg" alt=""></div>
+                    <div class="course_image">
+                        <!-- <img src="../../../assets/images/course_1.jpg" alt=""> -->
+                    
+                        <img src="../../../assets/images/course_1.jpg" alt="" *ngIf="course.picture == null">
+                        <img [src]="course.full_path_picture" alt="" *ngIf="course.picture != null">
+                    </div>
                     <div class="course_body">
                         <h3 class="course_title"><a routerLink='/course'>{{course.course_title}}</a></h3>
                         <div class="course_teacher">Mr. John Taylor</div>
@@ -38,7 +43,7 @@
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <span>5 Ratings</span>
                             </div>
-                            <div class="course_price ml-auto">$130</div>
+                            <div class="course_price ml-auto">₹ 13000/-</div>
                         </div>
                     </div>
                 </div>

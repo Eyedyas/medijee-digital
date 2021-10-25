@@ -26,9 +26,9 @@
             <!-- Courses Main Content -->
             <div class="col-lg-8">
                 <div class="courses_search_container">
-                    <form action="#" id="courses_search_form"
+                    <div id="courses_search_form"
                         class="courses_search_form d-flex flex-row align-items-center justify-content-start">
-                        <input type="search" class="courses_search_input" placeholder="Search Courses"
+                        <input type="text" [(ngModel)]="searchText" autocomplete="off" class="courses_search_input" placeholder="Search Courses"
                             required="required">
                         <select id="courses_search_select" class="courses_search_select courses_search_input">
                             <option>All Courses</option>
@@ -37,15 +37,21 @@
                             <option>Category</option> -->
                         </select>
                         <button action="submit" class="courses_search_button ml-auto">search now</button>
-                    </form>
+                    </div>
                 </div>
                 <div class="courses_container">
                     <div class="row courses_row">
 
+
                         <!-- Course -->
-                        <div class="col-lg-6 course_col" *ngFor='let course of courses'>
+                        <div class="col-lg-6 course_col" *ngFor='let course of courses | filter:searchText'>
                             <div class="course" >
-                                <div class="course_image"><img src="../../../assets/images/course_4.jpg" alt=""></div>
+                                <div class="course_image">
+                                    <!-- <img src="../../../assets/images/course_4.jpg" alt=""> -->
+                                    
+                                    <img src="../../../assets/images/course_1.jpg" alt="" *ngIf="course.picture == null">
+                                    <img [src]="course.full_path_picture" alt="" *ngIf="course.picture != null">
+                                </div>
                                 <div class="course_body">
                                     <h3 class="course_title"(click)='getCourseDetail(course)'><a>{{course.course_title}}</a></h3>
                                     <div class="course_teacher">Mr. John Taylor</div>
@@ -64,7 +70,7 @@
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                             <span>5 Ratings</span>
                                         </div>
-                                        <div class="course_price ml-auto">$130</div>
+                                        <div class="course_price ml-auto">₹ 13000/-</div>
                                     </div>
                                 </div>
                             </div>

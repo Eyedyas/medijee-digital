@@ -39,6 +39,7 @@ import { AdmissionProcedureComponent } from './pages/school/admission-procedure/
 import { DownloadAdmissionFormComponent } from './pages/school/download-admission-form/download-admission-form.component';
 import { AboutChairmanComponent } from './pages/about/about-chairman/about-chairman.component';
 import { AboutMedijeeComponent } from './pages/about/about-medijee/about-medijee.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -75,14 +76,14 @@ import { AboutMedijeeComponent } from './pages/about/about-medijee/about-medijee
   imports: [
     HttpClientModule,
     BrowserModule,
-    IonicModule.forRoot(),
     AppRoutingModule,
     BrowserAnimationsModule,
     CarouselModule,
     CommonModule,
     FormsModule,
     IonicModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

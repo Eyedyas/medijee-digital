@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent implements OnInit {
 
+  searchText: any;
   courses: any;
   constructor(private commonSer: CommonService, private router: Router) {
 
