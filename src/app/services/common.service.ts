@@ -32,7 +32,6 @@ export class CommonService {
 
   errorHandler(errors: HttpErrorResponse) {
     if (errors.error instanceof ErrorEvent) {
-      console.error('An error occurred:', errors.error.message);
     } else {
       console.error(
         `Backend returned code ${errors.status}, ` +

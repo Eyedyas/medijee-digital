@@ -22,8 +22,8 @@ export class HomeComponent implements OnInit {
 
   getCourse() {
     this.commonSer.getCourses().subscribe(res => {
-      this.courses = res.Items;
-      console.log("Home popular course: " + this.courses.reverse())
+      this.courses = res.Items.reverse();
+      console.log(this.courses)
     })
   }
   getCourseDetail(course: any) {
