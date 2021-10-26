@@ -16,6 +16,9 @@ div.h-lg-set {
 .h40 {
   height: 40vh;
 }
+.feature_title {
+  padding-left: 0% !important;
+}
 
 div.feature_icon img {
   width: 100%;
