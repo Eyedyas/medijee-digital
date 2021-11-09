@@ -1,59 +1,3 @@
-<!-- <div class="flex-me login-container" style="height: 100%; flex-flow: column;">
-    <ion-card>
-
-        <ion-card-header class="ion-text-center">
-            <ion-card-title><strong>Welcome Back</strong></ion-card-title>
-            <ion-card-subtitle><strong>Enter your details to sign in</strong></ion-card-subtitle>
-        </ion-card-header>
-
-        <ion-card-content>
-
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" novalidate>
-
-                <ion-item>
-                    <ion-label position="floating">Email</ion-label>
-                    <ion-input formControlName="username" type="text"></ion-input>
-                </ion-item>
-
-                <ion-item>
-                    <ion-label position="floating">Password</ion-label>
-                    <ion-input formControlName="password" type="password"></ion-input>
-                </ion-item>
-
-                <div class="button-bg mt20">
-                    <button expand="full" color="primary">Login</button>
-                </div>
-
-            </form>
-        </ion-card-content>
-    </ion-card>
-</div> -->
-
-
-
-
-
-
-<!-- <form class="mt200" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" novalidate>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input formControlName="username" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    <button class="btn btn-primary">Submit</button>
-</form> -->
-
-
-
-
-
-
-
 <main *ngIf='!registerMode'>
     <div class="container">
 
@@ -135,32 +79,40 @@
                                     <!-- <p class="text-center small">Enter your personal details to create account</p> -->
                                 </div>
 
-                                <form class="row g-3 needs-validation" novalidate>
+                                <form class="row g-3 needs-validation" [formGroup]="registration_form" (ngSubmit)="onSubmitReg(registration_form.value)" novalidate>
                                     <div class="col-12">
                                         <label for="yourName" class="form-label">Your Name</label>
-                                        <input type="text" name="name" class="form-control" id="yourName" required>
+                                        <input formControlName="name" type="text" name="name" class="form-control" id="yourName" required>
                                         <div class="invalid-feedback">Please, enter your name!</div>
                                     </div>
 
-                                    <div class="col-12">
+
+                                    <!-- <div class="col-12">
                                         <label for="yourEmail" class="form-label">Your Email</label>
-                                        <input type="email" name="email" class="form-control" id="yourEmail" required>
+                                        <input formControlName="login_email" type="email" name="email" class="form-control" id="yourEmail" required>
                                         <div class="invalid-feedback">Please enter a valid Email adddress!</div>
-                                    </div>
+                                    </div> -->
 
                                     <div class="col-12">
-                                        <label for="yourUsername" class="form-label">Username</label>
+                                        <label for="yourUsername" class="form-label">Your Email</label>
                                         <div class="input-group has-validation">
                                             <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                            <input type="text" name="username" class="form-control" id="yourUsername"
+                                            <input formControlName="login_email" type="email" name="email" class="form-control" id="yourUsername"
                                                 required>
-                                            <div class="invalid-feedback">Please choose a username.</div>
+                                            <div class="invalid-feedback">Please choose a valid email.</div>
                                         </div>
                                     </div>
 
                                     <div class="col-12">
+                                        <label for="cellphone" class="form-label">Phone Number</label>
+                                        <input formControlName="cellphone" type="tel" name="cellphone" class="form-control" id="cellphone" required>
+                                        <div class="invalid-feedback">Please, enter your Phone Number!</div>
+                                    </div>
+
+
+                                    <div class="col-12">
                                         <label for="yourPassword" class="form-label">Password</label>
-                                        <input type="password" name="password" class="form-control" id="yourPassword"
+                                        <input formControlName="login_password" type="password" name="password" class="form-control" id="yourPassword"
                                             required>
                                         <div class="invalid-feedback">Please enter your password!</div>
                                     </div>
@@ -191,4 +143,4 @@
         </section>
 
     </div>
-</main><!-- End #main -->
+</main>

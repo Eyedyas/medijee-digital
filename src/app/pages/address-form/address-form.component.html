@@ -1,0 +1,90 @@
+<div class="content mt-lg-7">
+
+    <div class="container">
+        <div class="row align-items-stretch no-gutters contact-wrap">
+            <div class="col-md-8">
+                <div class="form h-100">
+                    <h3>Enter Your Address details: </h3>
+
+                    <form class="mb-5" [formGroup]="addAddressForm" (submit)="bookService(addAddressForm.value)"
+                        novalidate id="contactForm" name="contactForm">
+                        <div class="row">
+                            <div class="col-md-6 form-group mb-5">
+                                <label for="" class="col-form-label">Address *</label>
+                                <input formControlName="billing_address" type="text" class="form-control"
+                                    name="address" id="address" placeholder="Your Address">
+                            </div>
+                            <div class="col-md-6 form-group mb-5">
+                                <label for="" class="col-form-label">City *</label>
+                                <input formControlName="billing_city" type="text" class="form-control"
+                                    name="city" id="city" placeholder="Your city">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 form-group mb-5">
+                                <label for="" class="col-form-label">State *</label>
+                                <input formControlName="billing_state" type="text" class="form-control"
+                                    name="state" id="state" placeholder="state">
+                            </div>
+                            <div class="col-md-6 form-group mb-5">
+                                <label for="" class="col-form-label">Pin Code *</label>
+                                <input formControlName="billing_zip" type="text" class="form-control"
+                                    name="pincode" id="pincode" placeholder="your pin code">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 form-group mb-5">
+                                <label for="" class="col-form-label">Country *</label>
+                                <input formControlName="billing_country" type="text" class="form-control"
+                                    name="country" id="country" placeholder="(Ex.) India">
+                            </div>
+                            <div class="col-md-6 form-group mb-5">
+                                <label for="" class="col-form-label">Ph. Number *</label>
+                                <input formControlName="billing_tel" type="tel" class="form-control"
+                                    name="billing_tel" id="billing_tel" placeholder="your phone number">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <!-- <input type="reset" full style="text-transform:capitalize" value="Clear" class="btn btn-primary rounded-0 py-2 px-4"> -->
+                                <!-- <button></button> -->
+                                <input type="submit" full style="text-transform:uppercase" value="Checkout"
+                                    class="btn btn-primary rounded-0 py-2 px-4">
+                                <span class="submitting"></span>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div id="form-message-warning mt-4"></div>
+                    <div id="form-message-success">
+                        Your message was sent, thank you!
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="contact-info h-100">
+                    <h3>Customer Information</h3>
+                    <p class="mb-5">Customer username and email address...</p>
+                    <ul class="list-unstyled">
+                        <!-- <li class="d-flex">
+                            <span class="wrap-icon icon-room mr-3"></span>
+                            <span class="text">9757 Aspen Lane South Richmond Hill, NY 11419</span>
+                        </li> -->
+                        <li class="d-flex">
+                            <i class="fas fa-address-book"></i>
+                            <span class="ml-2 text">{{ user.username }}</span>
+                        </li>
+                        <li class="d-flex">
+                            <i class="fas fa-envelope"></i>
+                            <span class="ml-2 text">{{ user.user_email}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

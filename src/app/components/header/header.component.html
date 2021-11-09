@@ -22,8 +22,13 @@
                                     <div>info.deercreative@gmail.com</div>
                                 </li>
                             </ul>
+                            <!-- *ngIf="user==null" -->
+                            <div class="top_bar_login ml-auto" >
+                                <div class="login_button"><a routerLink='/login' routerLinkActive="router-link-active">Register or Login</a></div>
+                            </div>
+                            
                             <div class="top_bar_login ml-auto">
-                                    <div class="login_button"><a routerLink='/login' routerLinkActive="router-link-active">Register or Login</a></div>
+                                <div class="login_button"><a routerLink='/my-account' routerLinkActive="router-link-active">My Account</a></div>
                             </div>
                         </div>
                     </div>

@@ -1,3 +1,4 @@
+import { OrderComponent } from './pages/order/order.component';
 import { StackholderComponent } from './pages/stackholder/stackholder.component';
 import { AboutMedijeeComponent } from './pages/about/about-medijee/about-medijee.component';
 import { AboutChairmanComponent } from './pages/about/about-chairman/about-chairman.component';
@@ -18,6 +19,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { EShopComponent } from './pages/e-shop/e-shop.component';
+import { AddressFormComponent } from './pages/address-form/address-form.component';
+import { MyAccountComponent } from './pages/my-account/my-account.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -33,8 +36,10 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'e-shop', component: EShopComponent },
   { path: 'bag', component: CartComponent },
+  { path: 'orders', component: OrderComponent },
   { path: 'product-detail/:id', component: ProductDetailComponent },
-
+  { path: 'address-form', component: AddressFormComponent },
+  { path: 'my-account', component: MyAccountComponent },
   { path: 'login', component: LoginComponent },
   { path: 'stackholder', component: StackholderComponent },
   { path: 'fee-structure', component: FeeStructureComponent },

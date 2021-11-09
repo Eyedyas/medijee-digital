@@ -41,6 +41,10 @@ import { AboutChairmanComponent } from './pages/about/about-chairman/about-chair
 import { AboutMedijeeComponent } from './pages/about/about-medijee/about-medijee.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { StackholderComponent } from './pages/stackholder/stackholder.component';
+import { AddressFormComponent } from './pages/address-form/address-form.component';
+import { MyAccountComponent } from './pages/my-account/my-account.component';
+import { OrderComponent } from './pages/order/order.component';
+import { OrderDetailsComponent } from './pages/order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +78,10 @@ import { StackholderComponent } from './pages/stackholder/stackholder.component'
     AboutChairmanComponent,
     AboutMedijeeComponent,
     StackholderComponent,
+    AddressFormComponent,
+    MyAccountComponent,
+    OrderComponent,
+    OrderDetailsComponent,
   ],
   imports: [
     HttpClientModule,

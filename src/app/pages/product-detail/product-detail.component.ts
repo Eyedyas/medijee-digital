@@ -31,14 +31,12 @@ export class ProductDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('here is product id: ', this.pk_product_id)
     this.getProductDetails(this.pk_product_id);
   }
 
   getProductDetails(pk_Product_id: number) {
     this.commonService.getProductDetails(pk_Product_id).subscribe(resp => {
       this.product = resp.Item
-      console.log('product title: ', this.product.asset_name)
     });
   }
 
@@ -123,8 +121,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   goToCart(product: any) {
-    this.__service.headerTitle.next('Bag');
-    this.navCtrl.navigateForward(['/bag']);
+    this.router.navigate(['/my-account'])
   }
 
 }

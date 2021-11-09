@@ -2,7 +2,7 @@ import { HomeComponent } from './../home/home.component';
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavController } from '@ionic/angular';
 import { CommonService } from 'src/app/services/common.service';
-import { NavigationExtras } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -29,6 +29,7 @@ export class CartComponent implements OnInit {
   constructor(public modalController: ModalController,
     public navCtrl: NavController,
     private __service: CommonService,
+    private router: Router
   ) {
     this.cartItems = JSON.parse(localStorage.getItem('cartValue'));
     this.setDiscountedPrice(this.getCartItemAndValue()['price']);
@@ -36,6 +37,9 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.user = JSON.parse(localStorage.getItem('currentUser'));
+    this.cartItems = JSON.parse(localStorage.getItem('cartValue'));
+
   }
 
   public getCartItemAndValue() {
@@ -158,35 +162,23 @@ export class CartComponent implements OnInit {
   }
 
   async openPaymentDetailsForm(discountedPrice: any) {
-
     console.log(discountedPrice)
-
+    this.router.navigate(['/address-form'], { state: { discountedPrice: discountedPrice } })
 
     if (this.cartItems.filter(prop => prop.product_name == this.promo_product).length == 0) {
       //return false;
     }
-
-
-
-
-    const modal = await this.modalController.create({
-      component: HomeComponent,
-      cssClass: 'my-custom-class',
-      componentProps: {
-        'discountedPrice': discountedPrice.toFixed(2)
-      }
-
-
-    });
-    modal.onDidDismiss()
-      .then((data: any) => {
-
-
-      });
-    return await modal.present();
-
-
-
+    // const modal = await this.modalController.create({
+    //   component: HomeComponent,
+    //   cssClass: 'my-custom-class',
+    //   componentProps: {
+    //     'discountedPrice': discountedPrice.toFixed(2)
+    //   }
+    // });
+    // modal.onDidDismiss()
+    //   .then((data: any) => {
+    //   });
+    // return await modal.present();
   }
 
   setDiscountedPrice(price: any) {

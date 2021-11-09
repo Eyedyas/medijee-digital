@@ -58,7 +58,7 @@
                                 <div class="course_image">
                                     <!-- <img src="../../../assets/images/course_4.jpg" alt=""> -->
                                     
-                                    <img src="../../../assets/images/course_1.jpg" alt="" *ngIf="course.picture == null">
+                                    <img height="100%" src="../../../assets/images/course_1.jpg" alt="" *ngIf="course.picture == null">
                                     <img [src]="course.full_path_picture" alt="" *ngIf="course.picture != null">
                                 </div>
                                 <div class="course_body">
