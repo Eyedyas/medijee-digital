@@ -5,8 +5,7 @@
             <div class="col">
                 <div class="products mb-3">
 
-                    <div class="product product-list" *ngFor="let order of orders.product_details"
-                        (click)="gotoProductDetails(order)">
+                    <div class="product product-list" *ngFor="let order of orders.product_details" (click)="gotoProductDetails(order)">
 
                         <span class="advanced" *ngIf="order.delivery_status != null">{{ order.delivery_status }}</span>
 

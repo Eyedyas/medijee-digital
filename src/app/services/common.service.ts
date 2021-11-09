@@ -166,4 +166,14 @@ export class CommonService {
         return resp;
       }), catchError(this.errorHandler));
   }
+
+  getOrders(student_id) {
+    const url = 'https://clientsomev2-dev.azurewebsites.net/api/Order/GetOrderDetailsById?student_id=9011';
+    return this.__http.get(url)
+      .pipe(map((resp: any) => {
+        return resp;
+      }));
+  }
+
+
 }

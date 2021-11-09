@@ -1,1 +1,50 @@
-<p>order-details works!</p>
+<div class="page-content mt-lg-5 pt-lg-5">
+    <div class="container">
+        <div class="product-details-top">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="product-gallery product-gallery-vertical">
+                        <div class="row">
+                            <!-- <figure class="product-main-image"> -->
+                                <img [src]="ImageUrl + order.logo"
+                                alt="Product image" class="product-image" onError="this.src='https://lettonie.extranet-aec.com/img/empty-cart.png'">
+                            
+                            <!-- </figure> -->
+                            <!-- End .product-main-image -->
+                        </div><!-- End .row -->
+                    </div><!-- End .product-gallery -->
+                </div><!-- End .col-md-6 -->
+                <div class="col-md-6">
+                    <div class="product-details">
+                        <h5 class="">{{order.asset_type_name}}</h5>
+                        <h1 class="product-title">{{ order.asset_name}}</h1><!-- End .product-title -->
+                        <div class="product-price">
+                            Rs. {{order.asset_price}}
+                            
+                        </div><!-- End .product-price -->
+                        <div class="product-content">
+                            <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero
+                                eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus. </p>
+                        </div><!-- End .product-content -->
+                        <div class="product-details-footer">
+                            <div class="product-cat">
+                                <span>Category: </span>
+                                <a> {{order.product_category_name}}</a>
+                            </div><!-- End .product-cat -->
+                        </div><!-- End .product-details-footer -->
+
+                        <div class="product-details-action">
+                            <a class="btn-product btn-cart"><span>Cancel Order</span></a> &nbsp;
+                            <a class="btn-product btn-cart"><span>Return Order</span></a>
+                        </div><!-- End .product-details-action -->
+
+
+
+                    </div><!-- End .product-details -->
+                </div><!-- End .col-md-6 -->
+            </div><!-- End .row -->
+        </div><!-- End .product-details-top -->
+
+
+    </div><!-- End .container -->
+</div><!-- End .page-content -->

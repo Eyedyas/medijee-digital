@@ -129,8 +129,8 @@
 
             <ion-card class="" *ngIf="user != null && getCartItemAndValue()['quantity'] > 0">
                 <ion-card-content>
-                    <ion-button class="button" expand="block" (click)="openPaymentDetailsForm(discountedPrice * 1.18)"
-                        class="regular-button">
+                    <ion-button expand="full" (click)="openPaymentDetailsForm(discountedPrice * 1.18)"
+                        class="regular-button" style="width: 100% !important;">
                         PROCEED &nbsp;
                         <ion-icon name="arrow-forward-outline"></ion-icon>
                     </ion-button>

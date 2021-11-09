@@ -24,7 +24,7 @@ export class OrderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.GetOrders();
+    this.getOrders();
   }
 
   async GetOrders() {
@@ -42,9 +42,19 @@ export class OrderComponent implements OnInit {
         loading.dismiss();
       });
   }
+
   gotoProductDetails(order: any) {
     console.log(order)
     this.router.navigate(['/order-details'], { state: { order: order } })
   }
+
+  getOrders() {
+    let userId: any = 9011;
+    this.service.getOrders(userId).subscribe((result) => {
+      this.orders = result.Items[0]
+    });
+  }
+
+
 
 }

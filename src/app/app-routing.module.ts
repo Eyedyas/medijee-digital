@@ -21,6 +21,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { EShopComponent } from './pages/e-shop/e-shop.component';
 import { AddressFormComponent } from './pages/address-form/address-form.component';
 import { MyAccountComponent } from './pages/my-account/my-account.component';
+import { OrderDetailsComponent } from './pages/order-details/order-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -37,6 +38,7 @@ const routes: Routes = [
   { path: 'e-shop', component: EShopComponent },
   { path: 'bag', component: CartComponent },
   { path: 'orders', component: OrderComponent },
+  { path: 'order-details', component: OrderDetailsComponent },
   { path: 'product-detail/:id', component: ProductDetailComponent },
   { path: 'address-form', component: AddressFormComponent },
   { path: 'my-account', component: MyAccountComponent },
