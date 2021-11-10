@@ -10,13 +10,18 @@ import { environment } from 'src/environments/environment.prod';
   providedIn: 'root'
 })
 export class CommonService {
-  user: any = null;
+
+  public user = new Subject<any>();
+  public user$ = this.user.asObservable();
 
   setHeaderTitle = new EventEmitter();
   subSetHeaderTitle: Subscription;
 
   public headerTitle = new Subject<any>();
   public headerTitle$ = this.headerTitle.asObservable();
+
+  public isLoggedIn = new Subject<any>();
+  public isLoggedIn$ = this.isLoggedIn.asObservable();
 
   // public iid: any = 20;
 

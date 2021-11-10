@@ -50,8 +50,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private __service: CommonService,
-    public alertController: AlertController,
-    private service: CommonService) {
+    public alertController: AlertController) {
     this.instituteId = environment.instituteId
 
     console.log('this.router.url', this.router.url);
@@ -149,10 +148,11 @@ export class LoginComponent implements OnInit {
         user['branch_id'] = this.branchId;
 
         localStorage.setItem('currentUser', JSON.stringify(user));
-        this.userService.user.next(user);
+
+        this.__service.user.next(user);
+
         this.user = JSON.parse(localStorage.getItem('currentUser'));
         this.getStudentProfile();
-        //this.admission(res.Item, '', 'submitted')
         this.accountCreatedPopup(userId);
       }
       if (res.Message === 'user exists') {
@@ -211,7 +211,7 @@ export class LoginComponent implements OnInit {
         if (this.response.Item != null) {
           const user = this.response.Item;
 
-          this.userService.user.next(this.response.Item);
+          this.__service.user.next(this.response.Item);
           localStorage.setItem('currentUser', JSON.stringify(user));
 
           this.getStudentProfile();

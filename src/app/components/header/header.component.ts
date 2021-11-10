@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +10,15 @@ export class HeaderComponent implements OnInit {
 
   user: any[] = null;
 
-  constructor() {
-    this.user = JSON.parse(localStorage.getItem('currentUser'));
+  constructor(private service: CommonService) {
+
+    this.service.user.subscribe(user => {
+      this.user = user;
+    })
+
   }
 
   ngOnInit(): void {
-    this.user = JSON.parse(localStorage.getItem('currentUser'));
     console.log(this.user)
   }
 
