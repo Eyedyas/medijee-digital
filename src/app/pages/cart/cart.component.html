@@ -1,5 +1,5 @@
 <ion-grid class="px-0 container h-100 mb50">
-    <ion-row *ngIf="getCartItemAndValue()['quantity'] > 0">
+    <ion-row *ngIf="getCartItemAndValue()['quantity'] > 0; else noValueInCart">
         <ion-col size="12" size-md=8>
             <ion-card *ngFor="let qItems of cartItems; let i=index;" class="regular-border">
                 <ion-card-content>
@@ -141,7 +141,7 @@
             </ion-card>
 
             <ion-card class="not-logged-in" *ngIf="user == null && getCartItemAndValue()['quantity'] > 0">
-                <ion-card-content class="text-center">
+                <ion-card-content class="text-center flex-me">
                     <ion-button class="button w-100" (click)="goForStudentSignup()" class="regular-button">
                         Sign Up
                     </ion-button> &nbsp; 
@@ -155,5 +155,14 @@
 
         </ion-col>
     </ion-row>
+
+    <ng-template #noValueInCart>
+        <div class="center-content">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <h5>Your cart is empty!</h5>
+        </div>
+    </ng-template>
+
+
 
 </ion-grid>

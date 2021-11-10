@@ -10,12 +10,19 @@ import { CommonService } from 'src/app/services/common.service';
 export class HomeComponent implements OnInit {
 
 
-  user: any[] = null;
+  user: any;
   courses: any;
   constructor(private commonSer: CommonService,
     private router: Router
   ) {
     this.user = JSON.parse(localStorage.getItem('currentUser'));
+
+    this.commonSer.user.subscribe(user => {
+      this.user = user;
+      console.log(this.user)
+    })
+
+
   }
 
 

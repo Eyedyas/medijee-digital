@@ -498,10 +498,14 @@
                         <div class="sidebar_section_title">Course Feature</div>
                         <div class="sidebar_feature">
                             <div class="course_price">₹ {{product.final_price}}/-
-                                <ion-button class="regular-button w-100" (click)="addItemInCart(product)" *ngIf="!checkItemStatusInCart(product)">ADD TO
-                                    BAG</ion-button>
-                                <ion-button class="regular-button w-100" (click)="goToCart(product)" *ngIf="checkItemStatusInCart(product)">GO TO BAG
-                                </ion-button>
+
+                                <span>
+                                    <ion-button class="regular-button w-100" (click)="addItemInCart(product)" *ngIf="!checkItemStatusInCart(product)">ADD TO
+                                        BAG</ion-button>
+                                    <ion-button class="regular-button w-100" (click)="goToCart(product)" *ngIf="checkItemStatusInCart(product)">GO TO BAG
+                                    </ion-button>
+                                </span>
+                                
 
                             </div>
 

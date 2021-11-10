@@ -8,7 +8,7 @@ import { CommonService } from 'src/app/services/common.service';
 })
 export class HeaderComponent implements OnInit {
 
-  user: any[] = null;
+  user: any;
 
   constructor(private service: CommonService) {
 

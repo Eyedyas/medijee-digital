@@ -60,3 +60,17 @@ div.breadcrumbs li {
 .cSoon h4:hover {
   color: #14bdee;
 }
+
+.center-content {
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.center-content i {
+  font-size:30px;
+  color: #424242 !important;
+}

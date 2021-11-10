@@ -22,12 +22,13 @@ export class ProductDetailComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private navCtrl: NavController,
-    private commonService: CommonService,
-    private __service: CommonService) {
+    private commonService: CommonService) {
     this.sub = this.activatedRoute.params.subscribe(params => {
       this.pk_product_id = params['id'];
       this.getProductDetails(this.pk_product_id);
     });
+
+
   }
 
   ngOnInit(): void {

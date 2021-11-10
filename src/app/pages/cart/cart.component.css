@@ -90,3 +90,7 @@ ion-alert .alert-wrapper {
 .button-solid {
   --background: #14bdee;
 }
+
+.not-logged-in .button-solid {
+  width: 100% !important;
+}

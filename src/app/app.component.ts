@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CommonService } from './services/common.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'medijee-digital';
+  user:any;
+
+  constructor(private commonSer: CommonService,
+    private router: Router
+  ) {
+    this.user = JSON.parse(localStorage.getItem('currentUser'));
+  }
+
+
+
 }

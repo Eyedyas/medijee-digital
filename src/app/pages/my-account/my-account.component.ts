@@ -10,16 +10,14 @@ import { environment } from 'src/environments/environment.prod';
   styleUrls: ['../../../assets/styles/molla-style.css']
 })
 export class MyAccountComponent implements OnInit {
-  user: any = null;
   cartItems = [];
+  user: any = null;
 
   constructor(
     private loadingCtrl: LoadingController,
     private commonService: CommonService,
     public navCtrl: NavController,
     private router: Router
-
-
   ) { 
     this.commonService.user.subscribe(user => {
       this.user = user;
