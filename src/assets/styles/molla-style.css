@@ -2369,7 +2369,6 @@ blockquote.text-white cite span {
   color: #333;
 }
 
-
 .page-header {
   padding: 4.6rem 0 5rem;
   background-color: #ebebeb;
@@ -4915,7 +4914,7 @@ blockquote.text-white cite span {
   font-weight: 300;
   font-size: 1.4rem;
   line-height: 1.43;
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
 }
 .product.product-list .product-content p {
   margin-bottom: 0;
@@ -11315,6 +11314,9 @@ body {
 }
 .mt-5 {
   margin-top: 5rem !important;
+}
+.mt-8 {
+  margin-top: 8rem !important;
 }
 .mb-5 {
   margin-bottom: 5rem !important;

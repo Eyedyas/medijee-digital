@@ -1,8 +1,13 @@
 .page-wrapper {
   margin-top: 150px;
 }
-/* @media screen and (min-width: 700px) {
-  .mt-lg-15 {
-    margin-top: 5rem;
+/* @media screen and (max-width: 756px) {
+  aside.my-account {
+    margin-top: 8rem !important;
   }
 } */
+/* @media (max-width: 768px) { */
+ul.my-account {
+  margin-top: 8rem !important;
+}
+/* } */

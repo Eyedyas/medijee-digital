@@ -2,13 +2,13 @@
   margin-top: 7rem;
 }
 
-.product-list{
+.product-list {
   cursor: pointer;
-  
+
   transition: 0.3s all ease-out;
 }
 
-.product-list:hover{
+.product-list:hover {
   -webkit-box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.2);
 }
@@ -17,7 +17,11 @@
   background-color: #aaeafd;
 }
 
-.product-media img{
+.pr-4 {
+  padding-right: 4rem !important;
+}
+
+.product-media img {
   width: 70%;
   margin: 0 auto;
 }
@@ -35,4 +39,3 @@
   text-align: center;
   background: #e7e3da;
 }
-

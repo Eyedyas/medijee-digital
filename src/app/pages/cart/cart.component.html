@@ -1,6 +1,6 @@
-<ion-grid class="container h-100 mb50">
+<ion-grid class="px-0 container h-100 mb50">
     <ion-row *ngIf="getCartItemAndValue()['quantity'] > 0">
-        <ion-col size="8">
+        <ion-col size="12" size-md=8>
             <ion-card *ngFor="let qItems of cartItems; let i=index;" class="regular-border">
                 <ion-card-content>
 
@@ -42,7 +42,7 @@
                 </ion-card-content>
             </ion-card>
         </ion-col>
-        <ion-col size="4">
+        <ion-col size="12" size-md=4>
             <ion-card class="">
                 <ion-card-content>
 

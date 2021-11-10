@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { LoadingController, NavController } from '@ionic/angular';
 import { CommonService } from 'src/app/services/common.service';
@@ -16,6 +17,7 @@ export class MyAccountComponent implements OnInit {
     private loadingCtrl: LoadingController,
     private commonService: CommonService,
     public navCtrl: NavController,
+    private router: Router
 
 
   ) { }
@@ -47,12 +49,13 @@ export class MyAccountComponent implements OnInit {
       localStorage.removeItem('currentUser');
       localStorage.removeItem('myprofile');
       localStorage.removeItem('providerId');
-      localStorage.removeItem('providerIdAdm');
       localStorage.setItem('cartValue', JSON.stringify(this.cartItems));
-      localStorage.setItem('cartValueAdm', JSON.stringify(this.cartItems));
       this.commonService.user = null;
       loading.dismiss();
-      this.navCtrl.navigateRoot('/login');
+      this.commonService.showToast('You are successfully signed Out!', 'top', 3000)
+
+      this.router.navigate(['/home'])
+      // this.navCtrl.navigateRoot('/login');
 
     });
   }

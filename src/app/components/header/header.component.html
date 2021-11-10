@@ -22,8 +22,8 @@
                                     <div>info.deercreative@gmail.com</div>
                                 </li>
                             </ul>
-                            <!-- *ngIf="user==null" -->
-                            <div class="top_bar_login ml-auto" >
+                            
+                            <div class="top_bar_login ml-auto" *ngIf="user==null">
                                 <div class="login_button"><a routerLink='/login' routerLinkActive="router-link-active">Register or Login</a></div>
                             </div>
                             
