@@ -16,162 +16,112 @@
     </div>
 </div>
 
-<!-- Course -->
 
-<div class="course">
+<div class="course mb-5">
     <div class="container">
-        <div class="row">
 
-            <!-- Course -->
-            <div class="col-lg-8" >
 
                 <div class="course_container">
                     <div class="course_title">{{ product.asset_name}}</div>
-                    <div
-                        class="course_info d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
 
-                        <!-- Course Info Item -->
-                        <div class="course_info_item">
-                            <div class="course_info_title">Course:</div>
-                            <div class="course_info_text"><a href="#"> {{ product.course_name}} </a></div>
-                        </div>
+                    <div class="row w-100 m-auto">
+                        <div class="col-12 col-md-8">
+                            <div class="course_info d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
 
-                        <!-- Course Info Item -->
-                        <div class="course_info_item">
-                            <div class="course_info_title">Reviews:</div>
-                            <div class="rating_r rating_r_4"><i></i><i></i><i></i><i></i><i></i></div>
-                        </div>
+                                <!-- Course Info Item -->
+                                <div class="course_info_item">
+                                    <div class="course_info_title">Course:</div>
+                                    <div class="course_info_text ml-2 ml-md-0"><a href="#"> {{product.course_name}} </a></div>
+                                </div>
 
-                        <!-- Course Info Item -->
-                        <div class="course_info_item">
-                            <div class="course_info_title">Categories:</div>
-                            <div class="course_info_text"><a href="#">{{ product.display_asset}}</a></div>
-                        </div>
-
-                    </div>
-
-                    <!-- Course Image -->
-                    <div class="course_image">
-                        <img src="../../../assets/images/course_4.jpg" alt="" *ngIf="product.logo == null">
-                        <img [src]="imageUrl + product.logo" alt="" *ngIf="product.logo != null">
-
-                        <!-- <img src="../../../assets/images/course_image.jpg" alt=""> -->
-                    </div>
-
-                    <div class="course_tabs_container mb-lg-5">
-                        <div *ngIf="product.summary" class="tab_panels">
-                            <p>{{ product.summary}}</p>
-                        </div>
-                        <div *ngIf="!product.summary" class="tab_panels">
-                            <p>{{ summary}}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course Sidebar -->
-            <div class="col-lg-4">
-                <div class="sidebar">
-
-                    <!-- Feature -->
-                    <div class="sidebar_section">
-                        <div class="sidebar_section_title">Course Feature</div>
-                        <div class="sidebar_feature">
-                            <div class="course_price">₹ {{product.final_price}}/-
-
-                                <span>
-                                    <ion-button class="regular-button w-100" (click)="addItemInCart(product)" *ngIf="!checkItemStatusInCart(product)">ADD TO
-                                        BAG</ion-button>
-                                    <ion-button class="regular-button w-100" (click)="goToCart(product)" *ngIf="checkItemStatusInCart(product)">GO TO BAG
-                                    </ion-button>
-                                </span>
-                                
+                                <!-- Course Info Item -->
+                                <div class="course_info_item">
+                                    <div class="course_info_title">Categories:</div>
+                                    <div class="course_info_text ml-2 ml-md-0"><a href="#"> {{product.display_asset}}</a></div>
+                                </div>
 
                             </div>
+                            <div class="course_image">
+                                <img src="../../../assets/images/course_4.jpg" alt="" *ngIf="product.logo == null">
+                                <img [src]="imageUrl + product.logo" alt="" *ngIf="product.logo != null">
+                            
+                                <!-- <img src="../../../assets/images/course_image.jpg" alt=""> -->
+                            </div>
+                            <div class="course_tabs_container mb-lg-5">
+                                <div *ngIf="product.summary" class="tab_panels">
+                                    <p>{{ product.summary}}</p>
+                                </div>
+                                <div *ngIf="!product.summary" class="tab_panels">
+                                    <p>{{ summary}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="sidebar">
 
-                            <!-- Features -->
-                            <div class="feature_list">
-
-                                <div class="feature d-flex flex-row align-items-center justify-content-start">
-                                    <div class="feature_title" >
+                                <!-- Feature -->
+                                <div class="sidebar_section">
+                                    <div class="sidebar_section_title">Course Feature</div>
+                                    <div class="sidebar_feature">
+                                        <div class="course_price">₹ {{product.final_price}}/-
+            
+                                            <span>
+                                                <ion-button class="regular-button w-100" (click)="addItemInCart(product)" *ngIf="!checkItemStatusInCart(product)">ADD TO
+                                                    BAG</ion-button>
+                                                <ion-button class="regular-button w-100" (click)="goToCart(product)" *ngIf="checkItemStatusInCart(product)">GO TO BAG
+                                                </ion-button>
+                                            </span>
+                                            
+            
+                                        </div>
+            
+                                        <!-- Features -->
+                                        <div class="feature_list">
+                                            <!-- Feature -->
+                                            <div class="feature d-flex py-0 mb-0 flex-row align-items-center justify-content-start">
+                                                <div class="feature_title"><i class="fa fa-clock-o"
+                                                        aria-hidden="true"></i><span>Duration:</span></div>
+                                                <div class="feature_text ml-auto">2 weeks</div>
+                                            </div>
+            
+                                            <!-- Feature -->
+                                            <div class="feature d-flex py-0 mb-0 flex-row align-items-center justify-content-start">
+                                                <div class="feature_title"><i class="fa fa-file-text-o"
+                                                        aria-hidden="true"></i><span>Lectures:</span></div>
+                                                <div class="feature_text ml-auto">10</div>
+                                            </div>
+            
+                                            <!-- Feature -->
+                                            <div class="feature d-flex py-0 mb-0 flex-row align-items-center justify-content-start">
+                                                <div class="feature_title"><i class="fa fa-question-circle-o"
+                                                        aria-hidden="true"></i><span>Lectures:</span></div>
+                                                <div class="feature_text ml-auto">6</div>
+                                            </div>
+            
+                                            <!-- Feature -->
+                                            <div class="feature d-flex py-0 mb-0 flex-row align-items-center justify-content-start">
+                                                <div class="feature_title"><i class="fa fa-list-alt"
+                                                        aria-hidden="true"></i><span>Lectures:</span></div>
+                                                <div class="feature_text ml-auto">Yes</div>
+                                            </div>
+            
+                                            <!-- Feature -->
+                                            <div class="feature d-flex py-0 mb-0 flex-row align-items-center justify-content-start">
+                                                <div class="feature_title"><i class="fa fa-users"
+                                                        aria-hidden="true"></i><span>Lectures:</span></div>
+                                                <div class="feature_text ml-auto">35</div>
+                                            </div>
+            
+                                        </div>
                                     </div>
                                 </div>
-
-
-                                <!-- Feature -->
-                                <div class="feature d-flex py-0 mb-0 flex-row align-items-center justify-content-start">
-                                    <div class="feature_title"><i class="fa fa-clock-o"
-                                            aria-hidden="true"></i><span>Duration:</span></div>
-                                    <div class="feature_text ml-auto">2 weeks</div>
-                                </div>
-
-                                <!-- Feature -->
-                                <div class="feature d-flex py-0 mb-0 flex-row align-items-center justify-content-start">
-                                    <div class="feature_title"><i class="fa fa-file-text-o"
-                                            aria-hidden="true"></i><span>Lectures:</span></div>
-                                    <div class="feature_text ml-auto">10</div>
-                                </div>
-
-                                <!-- Feature -->
-                                <div class="feature d-flex py-0 mb-0 flex-row align-items-center justify-content-start">
-                                    <div class="feature_title"><i class="fa fa-question-circle-o"
-                                            aria-hidden="true"></i><span>Lectures:</span></div>
-                                    <div class="feature_text ml-auto">6</div>
-                                </div>
-
-                                <!-- Feature -->
-                                <div class="feature d-flex py-0 mb-0 flex-row align-items-center justify-content-start">
-                                    <div class="feature_title"><i class="fa fa-list-alt"
-                                            aria-hidden="true"></i><span>Lectures:</span></div>
-                                    <div class="feature_text ml-auto">Yes</div>
-                                </div>
-
-                                <!-- Feature -->
-                                <div class="feature d-flex py-0 mb-0 flex-row align-items-center justify-content-start">
-                                    <div class="feature_title"><i class="fa fa-users"
-                                            aria-hidden="true"></i><span>Lectures:</span></div>
-                                    <div class="feature_text ml-auto">35</div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
+
                 </div>
-            </div>
-
-
-
-        </div>
+            
     </div>
 </div>
 
-<!-- Newsletter -->
-
-<!-- <div class="newsletter">
-    <div class="newsletter_background" style="background-image:url(../../../assets/images/newsletter_background.jpg)">
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div
-                    class="newsletter_container d-flex flex-lg-row flex-column align-items-center justify-content-start">
-
-                    <div class="newsletter_content text-lg-left text-center">
-                        <div class="newsletter_title">sign up for news and offers</div>
-                        <div class="newsletter_subtitle">Subcribe to lastest smartphones news & great deals we offer
-                        </div>
-                    </div>
-
-                    <div class="newsletter_form_container ml-lg-auto">
-                        <form action="#" id="newsletter_form"
-                            class="newsletter_form d-flex flex-row align-items-center justify-content-center">
-                            <input type="email" class="newsletter_input" placeholder="Your Email" required="required">
-                            <button type="submit" class="newsletter_button">subscribe</button>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
+<div style="margin-bottom: 30rem;"></div>

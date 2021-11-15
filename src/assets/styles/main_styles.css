@@ -519,8 +519,8 @@ section {
 .menu .logo a {
   color: #000000;
 }
-.menu.active {
-  right: 0;
+.menu.activemenu {
+  right: 0 !important;
 }
 .menu_close_container {
   position: absolute;

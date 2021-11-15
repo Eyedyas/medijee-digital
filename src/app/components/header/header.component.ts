@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from 'src/app/services/common.service';
+declare var $: any;
 
 @Component({
   selector: 'app-header',
@@ -9,6 +10,9 @@ import { CommonService } from 'src/app/services/common.service';
 export class HeaderComponent implements OnInit {
 
   user: any;
+  menu = $('.menu');
+  menuActive = false;
+
 
   constructor(private service: CommonService) {
 
@@ -21,7 +25,23 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('currentUser'));
 
-    console.log(this.user)
+    $('#hamburger').click(function() {
+      $('#mymenu').toggleClass('activemenu');
+    });
+
+    $('.menu_close').click(function() {
+      $('#mymenu').toggleClass('activemenu');
+    });
+
+    $('li.menu_mm').click(function() {
+      $('#mymenu').toggleClass('activemenu');
+    });
+
+    
+
+    
+
   }
+
 
 }
