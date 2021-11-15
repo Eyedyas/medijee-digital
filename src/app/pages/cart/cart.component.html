@@ -10,7 +10,7 @@
                             <div class="img-box">
                                 <img [src]="qItems.product_image" (load)="qItems.loaded = true"
                                     [hidden]="!qItems.loaded" />
-                                <img src="assets/imgs/blank-basket.png" [hidden]="qItems.loaded">
+                                <img class="mx-auto" src="assets/images/blank-basket.png" [hidden]="qItems.loaded">
                             </div>
 
 
@@ -132,7 +132,7 @@
                     <ion-button expand="full" (click)="openPaymentDetailsForm(discountedPrice * 1.18)"
                         class="regular-button" style="width: 100% !important;">
                         PROCEED &nbsp;
-                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                        <i class="fas fa-arrow-circle-up"></i>
                     </ion-button>
 
 

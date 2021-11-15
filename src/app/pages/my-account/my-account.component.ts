@@ -18,7 +18,7 @@ export class MyAccountComponent implements OnInit {
     private commonService: CommonService,
     public navCtrl: NavController,
     private router: Router
-  ) { 
+  ) {
     this.commonService.user.subscribe(user => {
       this.user = user;
     })
@@ -26,27 +26,17 @@ export class MyAccountComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
   onLogout() {
-    // this.nav.setRoot(DashboardPage);
-    // localStorage.removeItem("currentUser");
     this.removeToken();
   }
 
   async removeToken() {
-    // this.menu.close();
-
     const loading = await this.loadingCtrl.create({
       message: 'Logging out...',
     });
     await loading.present();
-
-
     this.user = JSON.parse(localStorage.getItem('currentUser'));
-
     this.commonService.removeToken(this.user.student_id).subscribe((result) => {
-
       localStorage.removeItem('currentUser');
       localStorage.removeItem('myprofile');
       localStorage.removeItem('providerId');

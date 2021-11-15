@@ -190,8 +190,12 @@ export class LoginComponent implements OnInit {
 
   async onSubmit(m: FormGroup) {
     console.log('fun call................')
+    const loading = await this.loadingCtrl.create({
+      message: 'Please wait...',
+    });
+    await loading.present();
     this.userService.onLogin(m).subscribe((res: any) => {
-
+      loading.dismiss()
       this.response = res;
       if (this.response.Message === 'AlreadyLogin') {
         this.userService.showToast('You are already login!');
@@ -227,13 +231,23 @@ export class LoginComponent implements OnInit {
 
   }
 
-  removeToken(student_id: any) {
+  async removeToken(student_id: any) {
+    const loading = await this.loadingCtrl.create({
+      message: 'Please wait...',
+    });
+    await loading.present();
     this.userService.removeToken(student_id).subscribe((result) => {
+      loading.dismiss()
     });
   }
 
-  getStudentProfile() {
+  async getStudentProfile() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Please wait...',
+    });
+    await loading.present();
     this.userService.getStudentProfile(this.user.student_id).subscribe((resp) => {
+      loading.dismiss()
       this.userService.studentName.next(resp.Item.name);
       localStorage.setItem('myProfile', JSON.stringify(resp.Item));
       if (resp.Item.picture == null) {

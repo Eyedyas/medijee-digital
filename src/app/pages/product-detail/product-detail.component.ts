@@ -2,7 +2,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonService } from 'src/app/services/common.service';
-import { NavController } from '@ionic/angular';
+import { NavController, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-product-detail',
@@ -16,12 +16,15 @@ export class ProductDetailComponent implements OnInit {
   product: any = {};
   cartItem: any = [];
   DownloadImage = environment.DownloadImage;
+  summary: string = `MEDIJEE Classes are unique from other institutes because of its immense focus on the quality of academic delivery and
+                                        its pedagogy mastered over more multiple years.`;
 
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private navCtrl: NavController,
+    private loadingCtrl: LoadingController,
     private commonService: CommonService) {
     this.sub = this.activatedRoute.params.subscribe(params => {
       this.pk_product_id = params['id'];
@@ -35,8 +38,13 @@ export class ProductDetailComponent implements OnInit {
     this.getProductDetails(this.pk_product_id);
   }
 
-  getProductDetails(pk_Product_id: number) {
+  async getProductDetails(pk_Product_id: number) {
+    const loading = await this.loadingCtrl.create({
+      message: 'Please wait...',
+    });
+    await loading.present();
     this.commonService.getProductDetails(pk_Product_id).subscribe(resp => {
+      loading.dismiss()
       this.product = resp.Item
     });
   }

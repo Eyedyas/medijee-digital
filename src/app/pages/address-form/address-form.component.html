@@ -64,7 +64,7 @@
 
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" *ngIf="user">
                 <div class="contact-info h-100">
                     <h3>Customer Information</h3>
                     <p class="mb-5">Customer username and email address...</p>
@@ -75,11 +75,11 @@
                         </li> -->
                         <li class="d-flex">
                             <i class="fas fa-address-book"></i>
-                            <span class="ml-2 text">{{ user.username }}</span>
+                            <span class="ml-2 text">{{ user.cell_phone }}</span>
                         </li>
                         <li class="d-flex">
                             <i class="fas fa-envelope"></i>
-                            <span class="ml-2 text">{{ user.user_email}}</span>
+                            <span class="ml-2 text">{{ user.student_email}}</span>
                         </li>
                     </ul>
                 </div>

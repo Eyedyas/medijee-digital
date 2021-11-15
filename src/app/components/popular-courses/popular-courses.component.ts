@@ -1,3 +1,4 @@
+import { LoadingController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from 'src/app/services/common.service';
 
@@ -9,7 +10,8 @@ import { CommonService } from 'src/app/services/common.service';
 export class PopularCoursesComponent implements OnInit {
 
   courses: any;
-  constructor(private commonSer: CommonService) {
+  constructor(private commonSer: CommonService,
+    private loadingCtrl: LoadingController) {
 
   }
 
@@ -17,8 +19,13 @@ export class PopularCoursesComponent implements OnInit {
     this.getCourse();
   }
 
-  getCourse() {
+  async getCourse() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Please wait...',
+    });
+    await loading.present();
     this.commonSer.getCourses().subscribe(res => {
+      loading.dismiss()
       this.courses = res.Items;
       console.log(this.courses)
     })

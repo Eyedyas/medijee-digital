@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NavController } from '@ionic/angular';
+import { NavController, LoadingController } from '@ionic/angular';
 import { CommonService } from 'src/app/services/common.service';
 
 @Component({
@@ -20,7 +20,8 @@ export class BlogSingleComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private navCtrl: NavController,
     private commonService: CommonService,
-    private __service: CommonService) {
+    private __service: CommonService,
+    private loadingCtrl: LoadingController) {
 
     this.sub = this.activatedRoute.params.subscribe(params => {
       this.pk_blog_id = params['id'];
@@ -31,8 +32,13 @@ export class BlogSingleComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getBlogDetails(pk_blog_id: number) {
+  async getBlogDetails(pk_blog_id: number) {
+    const loading = await this.loadingCtrl.create({
+      message: 'Please wait...',
+    });
+    await loading.present();
     this.commonService.getBlogDetails(pk_blog_id).subscribe(resp => {
+      loading.dismiss()
       this.blog = resp.Item
       console.log('blog title: ', this.blog.abstracts)
     });

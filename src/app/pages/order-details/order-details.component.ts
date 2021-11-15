@@ -33,8 +33,13 @@ export class OrderDetailsComponent implements OnInit {
     this.getOrderDetails(this.pk_product_mapping_id);
   }
 
-  getOrderDetails(pk_product_mapping_id: number) {
+  async getOrderDetails(pk_product_mapping_id: number) {
+    const loading = await this.loadingCtrl.create({
+      message: 'Please wait...',
+    });
+    await loading.present();
     this.__service.getProductDetails(pk_product_mapping_id).subscribe(resp => {
+      loading.dismiss()
       this.order = resp.Item;
     });
   }

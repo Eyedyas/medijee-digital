@@ -1,7 +1,5 @@
 <!-- Header -->
-
 <header class="header">
-
     <!-- Top Bar -->
     <div class="top_bar">
         <div class="top_bar_container">
@@ -14,20 +12,24 @@
                                     <div class="question">Have any questions?</div>
                                 </li>
                                 <li>
-                                    <i class="fa fa-phone mr-1" aria-hidden="true"></i>
-                                    <div>001-1234-88888</div>
+                                    <i class="fas fa-phone mr-1" aria-hidden="true"></i>
+                                    <div>9797-662-255</div>
                                 </li>
                                 <li>
-                                    <i class="fa fa-envelope-o mr-1" aria-hidden="true"></i>
+                                    <i class="far fa-envelope mr-1" aria-hidden="true"></i>
                                     <div>info.deercreative@gmail.com</div>
                                 </li>
                             </ul>
                             
-                            <div class="top_bar_login ml-auto" *ngIf="user==null">
+                            <div class="top_bar_login ml-auto" *ngIf="!user">
                                 <div class="login_button"><a routerLink='/login' routerLinkActive="router-link-active">Register or Login</a></div>
                             </div>
+
+                            <div class="top_bar_login ml-auto"  *ngIf="!user">
+                                <div class="login_button"><a href="http://localhost:8100/login" target="_blank" routerLinkActive="router-link-active">Student Login</a></div>
+                            </div>
                             
-                            <div class="top_bar_login ml-auto" >
+                            <div class="top_bar_login ml-auto" *ngIf="user">
                                 <div class="login_button"><a routerLink='/my-account' routerLinkActive="router-link-active">My Account</a></div>
                             </div>
                         </div>
@@ -65,10 +67,10 @@
                                 <li><a routerLink='/blogs' routerLinkActive="router-link-active">Blogs</a></li>
                                 <!-- <li><a routerLink='/about' routerLinkActive="router-link-active">About</a></li> -->
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">About</a>
+                                    <a class="nav-link  dropdown-toggle" data-bs-toggle="dropdown">About</a>
                                     <ul class="dropdown-menu main_nav">
                                         <li><a class="dropdown-item" routerLink='/about-chairman'>Chairman Message</a></li>
-                                        <li><a class="dropdown-item" routerLink='/about-medijee'>Medijee</a></li>
+                                        <li><a class="dropdown-item" routerLink='/about-medijee'>Medijee Digital</a></li>
                                     </ul>
                                 </li>
                                 <li><a routerLink='/contact' routerLinkActive="router-link-active">Contact</a></li>

@@ -1,3 +1,4 @@
+import { LoadingController } from '@ionic/angular';
 import { environment } from 'src/environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -15,10 +16,13 @@ export class EShopComponent implements OnInit {
 
   searchTextEl: any = '';
   searchText: any = '';
+  summary: string = `MEDIJEE Classes are unique from other institutes because of its immense focus on the quality of academic delivery and
+                                        its pedagogy mastered over more multiple years.`;
 
 
   constructor(private commonSer: CommonService,
-    private router: Router
+    private router: Router,
+    private loadingCtrl: LoadingController
   ) {
 
   }
@@ -27,8 +31,13 @@ export class EShopComponent implements OnInit {
     this.getCourse();
   }
 
-  getCourse() {
+  async getCourse() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Please wait...',
+    });
+    await loading.present();
     this.commonSer.getEShop().subscribe(res => {
+      loading.dismiss()
       this.eShop = res.Items;
       console.log(this.eShop)
     })
@@ -36,5 +45,13 @@ export class EShopComponent implements OnInit {
 
   productDetail(product: any) {
     this.router.navigateByUrl('/product-detail/' + product.pk_asset_id);
+  }
+  filterCourses(event: any) {
+    console.log(event.target.value)
+    if (event.target.value == '') {
+      this.searchTextEl = '';
+      this.searchText = '';
+    }
+
   }
 }

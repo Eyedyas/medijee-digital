@@ -11,3 +11,6 @@ ul.my-account {
   margin-top: 8rem !important;
 }
 /* } */
+li:hover {
+  cursor: pointer !important;
+}

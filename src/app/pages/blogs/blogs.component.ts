@@ -1,3 +1,4 @@
+import { LoadingController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonService } from 'src/app/services/common.service';
@@ -10,7 +11,7 @@ import { CommonService } from 'src/app/services/common.service';
 export class BlogsComponent implements OnInit {
 
   blogs: any;
-  constructor(private commonSer: CommonService, private router: Router) {
+  constructor(private commonSer: CommonService, private router: Router, private loadingCtrl: LoadingController) {
 
   }
 
@@ -18,8 +19,13 @@ export class BlogsComponent implements OnInit {
     this.getBlogs();
   }
 
-  getBlogs() {
+  async getBlogs() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Please wait...',
+    });
+    await loading.present();
     this.commonSer.getBlogs().subscribe(res => {
+      loading.dismiss()
       this.blogs = res.Items.reverse();
       console.log(this.blogs)
     })

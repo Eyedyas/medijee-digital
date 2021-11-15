@@ -23,6 +23,11 @@ ion-icon {
   align-items: center;
   justify-content: center;
 }
+.img-box {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
 
 ion-card-content {
   padding: 5px;
@@ -30,8 +35,9 @@ ion-card-content {
 }
 
 img {
-  width: 100%;
+  width: 60%;
 }
+
 ion-card {
   margin: 10px;
 }

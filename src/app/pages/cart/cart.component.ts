@@ -11,11 +11,7 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
 
-
   user: any = null;
-
-
-
   cartItems: any[] = [];
   productsCode: any[] = []
   promo_code: any = {};
@@ -23,8 +19,6 @@ export class CartComponent implements OnInit {
   draftValue: any;
   discountedPrice: number;
   promo_product: string;
-
-
 
   constructor(public modalController: ModalController,
     public navCtrl: NavController,
@@ -95,11 +89,8 @@ export class CartComponent implements OnInit {
                 this.promo_code = {};
                 this.promo_discount = 0;
               }
-
             });
-
             console.log(this.productsCode)
-
           }
         }
         index++;

@@ -16,7 +16,7 @@ export class AddressFormComponent implements OnInit {
 
   addAddressForm: FormGroup;
   cartItem: any = [];
-  user: any;
+  user: any = null;
   paymentTransaction: any = {};
   selectedServiceList: any;
   selectedAdmissionSubjects: any[] = [];
@@ -143,8 +143,13 @@ export class AddressFormComponent implements OnInit {
 
   }
 
-  getPaymentHistory(trackingId: any) {
+  async getPaymentHistory(trackingId: any) {
+    const loading = await this.loadingCtrl.create({
+      message: 'Please wait...',
+    });
+    await loading.present();
     this.service.getPaymentTransaction(trackingId).subscribe(resp => {
+      loading.dismiss()
       if (resp.Message == 'Success!') {
         this.paymentTransaction = resp.Item;
         if (this.paymentTransaction.order_status == 'Success') {

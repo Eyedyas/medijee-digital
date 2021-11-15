@@ -4,6 +4,7 @@ import { catchError, map } from 'rxjs/operators';
 import { HttpErrorResponse, HttpClient } from '@angular/common/http';
 import { AlertController, NavController, ToastController } from '@ionic/angular';
 import { environment } from 'src/environments/environment.prod';
+import { RequestOptions } from '@angular/http';
 
 
 @Injectable({
@@ -26,9 +27,6 @@ export class CommonService {
   // public iid: any = 20;
 
   private baseurl = environment.Baseurl;
-
-  // public institute_id = 28;
-
 
   constructor(
     private http: HttpClient,
@@ -180,5 +178,20 @@ export class CommonService {
       }));
   }
 
+  postQueryV2(value) {
+    const url = this.baseurl + '/Enquiry/EnquiryV2';
+    return this.http.post(url, value)
+      .pipe(map((resp: any) => {
+        return resp;
+      }), catchError(this.errorHandler));
+  }
+
+  MedijeeEmail(name: string, sender_email: string, phone: string, message: string) {
+    const url = 'https://clientsomev2-alpha.azurewebsites.net/api/SRNEmail?name=' + name + '&sender_email=' + sender_email + '&message=' + message + '&institute_id=30';
+    return this.http.get(url)
+      .pipe(map((resp: any) => {
+        return resp.json();
+      }));
+  }
 
 }
