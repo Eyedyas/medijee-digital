@@ -187,7 +187,7 @@ export class CommonService {
   }
 
   MedijeeEmail(name: string, sender_email: string, phone: string, message: string) {
-    const url = 'https://clientsomev2-alpha.azurewebsites.net/api/SRNEmail?name=' + name + '&sender_email=' + sender_email + '&message=' + message + '&institute_id=30';
+    const url = 'https://clientsomev2-alpha.azurewebsites.net/api/SRNEmail?name=' + name + '&sender_email=' + sender_email + '&phone=' + phone + '&message=' + message + '&institute_id=30';
     return this.http.get(url)
       .pipe(map((resp: any) => {
         return resp.json();

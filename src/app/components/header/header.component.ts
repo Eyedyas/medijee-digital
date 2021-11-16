@@ -25,23 +25,16 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('currentUser'));
 
-    $('#hamburger').click(function() {
+    $('#hamburger').click(function () {
       $('#mymenu').toggleClass('activemenu');
     });
 
-    $('.menu_close').click(function() {
+    $('.menu_close').click(function () {
       $('#mymenu').toggleClass('activemenu');
     });
 
-    $('li.menu_mm').click(function() {
+    $('li.menu_mm').click(function () {
       $('#mymenu').toggleClass('activemenu');
     });
-
-    
-
-    
-
   }
-
-
 }

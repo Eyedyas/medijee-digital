@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonService } from './services/common.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +10,7 @@ import { CommonService } from './services/common.service';
 })
 export class AppComponent {
   title = 'medijee-digital';
-  user:any;
+  user: any;
 
   constructor(private commonSer: CommonService,
     private router: Router

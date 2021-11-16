@@ -179,11 +179,8 @@ $(document).ready(function()
 	}
 
 	/* 
-
 	6. Initialize Milestones
-
 	*/
-
 	function initMilestones()
 	{
 		if($('.milestone_counter').length)
@@ -234,5 +231,4 @@ $(document).ready(function()
 	    	});
 		}
 	}
-
 });

@@ -25,6 +25,8 @@ export class MyAccountComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.user = JSON.parse(localStorage.getItem('currentUser'));
+
   }
   onLogout() {
     this.removeToken();
