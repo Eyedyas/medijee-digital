@@ -47,4 +47,8 @@ export class CoursesComponent implements OnInit {
     }
 
   }
+
+  enquiry() {
+    this.router.navigate(['/enquiry-form'])
+  }
 }

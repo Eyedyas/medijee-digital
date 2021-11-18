@@ -1,0 +1,38 @@
+<div class="home">
+    <div class="breadcrumbs_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="breadcrumbs">
+                        <ul>
+                            <li><a routerLink='/home'>Home</a></li>
+                            <li>Enquiry</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-lg">
+    <div class="row my-4">
+        <div class="col-7 mx-auto">
+            <form [formGroup]="enquiryRequestform"
+                class="counter_form_content d-flex flex-column align-items-center justify-content-center"
+                (ngSubmit)="onSubmit(enquiryRequestform.value)" novalidate>
+                <div class="counter_form_title">Enquiry</div>
+                <input formControlName="name" type="text" class="counter_input" placeholder="Your Name:" required="required">
+                <input formControlName="phone" type="tel" class="counter_input" placeholder="Phone:" required="required">
+                <select [(ngModel)]="course_title" formControlName="course_title" (change)="getCoursesFilter($event)"
+                    name="counter_select" id="counter_select" class="counter_input counter_options">
+                    <option selected value="">Select Course</option>
+                    <option [ngValue]="course.course_title" *ngFor='let course of courses'>{{course.course_title}}</option>
+                </select>
+                <textarea formControlName="message" class="counter_input counter_text_input" placeholder="Message:"
+                    required="required"></textarea>
+                <button type="submit" class="counter_form_button">submit now</button>
+            </form>
+        </div>
+    </div>
+</div>

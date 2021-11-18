@@ -294,6 +294,7 @@ blockquote.text-white cite span {
 }
 .page-wrapper {
   position: relative;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   min-height: 100%;

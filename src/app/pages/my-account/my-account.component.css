@@ -14,3 +14,6 @@ ul.my-account {
 li:hover {
   cursor: pointer !important;
 }
+.fs-18 {
+  font-size: 18px !important;
+}

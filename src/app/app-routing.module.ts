@@ -1,3 +1,4 @@
+import { EnquiryFormComponent } from './components/enquiry-form/enquiry-form.component';
 import { OrderComponent } from './pages/order/order.component';
 import { StackholderComponent } from './pages/stackholder/stackholder.component';
 import { AboutMedijeeComponent } from './pages/about/about-medijee/about-medijee.component';
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'page', component: PageComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'e-shop', component: EShopComponent },
+  { path: 'enquiry-form', component: EnquiryFormComponent },
   { path: 'bag', component: CartComponent },
   { path: 'orders', component: OrderComponent },
   { path: 'order-details', component: OrderDetailsComponent },

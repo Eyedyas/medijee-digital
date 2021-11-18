@@ -54,19 +54,19 @@ export class RegisterComponent implements OnInit {
   }
 
   async getCourse() {
-    const loading = await this.loadingCtrl.create({
-      message: 'Please wait...',
-    });
-    await loading.present();
+    // const loading = await this.loadingCtrl.create({
+    //   message: 'Please wait...',
+    // });
+    // await loading.present();
     this.commonSer.getCourses().subscribe(res => {
-      loading.dismiss()
+      // loading.dismiss()
       this.courses = res.Items.reverse().slice(2, 5);
       console.log(this.courses)
     })
   }
 
   getCoursesFilter(course_title) {
-    this.course_title = course_title
+    this.course_title = course_title.target.value
   }
 
   async onSubmit(value) {

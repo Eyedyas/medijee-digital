@@ -20,7 +20,7 @@
       rgba(30, 67, 86, 0),
       rgba(30, 67, 86, 0)
     ),
-    url("src/assets/images/home_slider_1.jpg") center top no-repeat;
+    url("src/assets/images/home_slider_1.jpg") center bottom no-repeat;
   z-index: -1;
   transform: translateX(-50%) rotate(0deg);
 }
@@ -235,7 +235,7 @@
       url("src/assets/images/home_slider_1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: bottom center;
   }
   #myVideo {
     display: none;

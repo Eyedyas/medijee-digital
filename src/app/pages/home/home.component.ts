@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   courses: any;
 
   constructor(private commonSer: CommonService,
-    private loadingCtrl: LoadingController,
+    // private loadingCtrl: LoadingController,
     private router: Router
   ) {
     this.user = JSON.parse(localStorage.getItem('currentUser'));

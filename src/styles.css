@@ -62,15 +62,15 @@ div.breadcrumbs li {
 }
 
 .center-content {
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  display: flex;
   text-align: center;
+  height: 40vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .center-content i {
   font-size: 30px;
+  margin-right: 5px;
   color: #424242 !important;
 }

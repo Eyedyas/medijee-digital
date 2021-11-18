@@ -23,15 +23,12 @@
                 </div>
             </div>
         </div>
-        <div class="mt47 row courses_row">
-
+        <div class="mt47 row courses_row" *ngIf="courses; else noCourses">
             <!-- Course -->
             <div class="col-lg-4 mb-3 course_col" *ngFor='let course of courses'>
                 <div class="course" (click)="getCourseDetail(course)">
                     <div class="course_image">
                         <!-- <img src="../../../assets/images/course_1.jpg" alt=""> -->
-                    
-                        
                         <img src="../../../assets/images/course_1.jpg" alt="" *ngIf="course.picture == null">
                         <img [src]="course.full_path_picture" alt="" *ngIf="course.picture != null">
                     </div>
@@ -60,6 +57,74 @@
             </div>
 
         </div>
+        <ng-template #noCourses>
+            <div class="mt47 row courses_row">
+                            <div class="col-lg-4 mb-3 course_col">
+                                <div class="course">
+                                    <div class="course_image">
+                                        <img src="../../../assets/images/course_1.jpg" alt="">
+                                    </div>
+                            
+                                    <div class="course_body">
+                                        <h3 class="course_title"><a>
+                                            <ion-skeleton-text animated></ion-skeleton-text>
+                                        </a></h3>
+                                        <div class="course_teacher">
+                                            <ion-skeleton-text animated></ion-skeleton-text>
+                                        </div>
+                                        <div class="course_text">
+                                            <p>
+                                            <ion-skeleton-text animated></ion-skeleton-text>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-3 course_col">
+                                <div class="course">
+                                    <div class="course_image">
+                                        <img src="../../../assets/images/course_1.jpg" alt="">
+                                    </div>
+                            
+                                    <div class="course_body">
+                                        <h3 class="course_title"><a>
+                                                <ion-skeleton-text animated></ion-skeleton-text>
+                                            </a></h3>
+                                        <div class="course_teacher">
+                                            <ion-skeleton-text animated></ion-skeleton-text>
+                                        </div>
+                                        <div class="course_text">
+                                            <p>
+                                                <ion-skeleton-text animated></ion-skeleton-text>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-3 course_col">
+                                <div class="course">
+                                    <div class="course_image">
+                                        <img src="../../../assets/images/course_1.jpg" alt="">
+                                    </div>
+                            
+                                    <div class="course_body">
+                                        <h3 class="course_title"><a>
+                                                <ion-skeleton-text animated></ion-skeleton-text>
+                                            </a></h3>
+                                        <div class="course_teacher">
+                                            <ion-skeleton-text animated></ion-skeleton-text>
+                                        </div>
+                                        <div class="course_text">
+                                            <p>
+                                                <ion-skeleton-text animated></ion-skeleton-text>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            </div>
+            
+        </ng-template>
         <div class="row">
             <div class="col">
                 <div class="courses_button trans_200"><a routerLink='/courses'>view all courses</a></div>

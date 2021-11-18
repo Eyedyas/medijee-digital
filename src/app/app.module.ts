@@ -45,6 +45,7 @@ import { AddressFormComponent } from './pages/address-form/address-form.componen
 import { MyAccountComponent } from './pages/my-account/my-account.component';
 import { OrderComponent } from './pages/order/order.component';
 import { OrderDetailsComponent } from './pages/order-details/order-details.component';
+import { EnquiryFormComponent } from './components/enquiry-form/enquiry-form.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { OrderDetailsComponent } from './pages/order-details/order-details.compo
     MyAccountComponent,
     OrderComponent,
     OrderDetailsComponent,
+    EnquiryFormComponent,
   ],
   imports: [
     HttpClientModule,
