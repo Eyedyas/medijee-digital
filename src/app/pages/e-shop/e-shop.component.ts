@@ -38,7 +38,7 @@ export class EShopComponent implements OnInit {
     await loading.present();
     this.commonSer.getEShop().subscribe(res => {
       loading.dismiss()
-      this.eShop = res.Items;
+      this.eShop = res.Items.slice(0,5);
       console.log(this.eShop)
     })
   }

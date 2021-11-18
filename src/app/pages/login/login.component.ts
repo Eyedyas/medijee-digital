@@ -152,7 +152,7 @@ export class LoginComponent implements OnInit {
         this.__service.user.next(user);
 
         this.user = JSON.parse(localStorage.getItem('currentUser'));
-        this.getStudentProfile();
+        this.getStudentProfile(userId);
         this.accountCreatedPopup(userId);
       }
       if (res.Message === 'user exists') {
@@ -218,7 +218,7 @@ export class LoginComponent implements OnInit {
           this.__service.user.next(this.response.Item);
           localStorage.setItem('currentUser', JSON.stringify(user));
 
-          this.getStudentProfile();
+          this.getStudentProfile(this.response.Item.student_id);
         }
         else {
           this.userService.showToast('Login failed due to server error!');
@@ -241,12 +241,12 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  async getStudentProfile() {
+  async getStudentProfile(student_id) {
     const loading = await this.loadingCtrl.create({
       message: 'Please wait...',
     });
     await loading.present();
-    this.userService.getStudentProfile(this.user.student_id).subscribe((resp) => {
+    this.userService.getStudentProfile(student_id).subscribe((resp) => {
       loading.dismiss()
       this.userService.studentName.next(resp.Item.name);
       localStorage.setItem('myProfile', JSON.stringify(resp.Item));

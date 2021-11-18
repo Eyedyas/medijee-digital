@@ -50,7 +50,7 @@ div.course {
   height: 92px;
 }
 .courses_search_input {
-  width: 240px;
+  width: 100%;
   height: 46px;
   border: solid 1px #d9d9d9;
   border-radius: 3px;

@@ -125,7 +125,8 @@ h3.course_title {
   display: flex;
 }
 .course_image img {
-  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 div.course-enq-detl-btn {
   height: 12vh;
@@ -317,4 +318,13 @@ div.course-enq-detl-btn {
   outline: none;
   border-radius: 3px;
   margin-top: 15px;
+}
+
+.fa-question-circle{
+  font-size: 26px;
+    position: absolute;
+    right: 0;
+    background: rgba(0,0,0,0.6);
+    padding: 5px;
+    color: #ededed;
 }

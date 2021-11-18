@@ -57,7 +57,7 @@
                             <div class="course" (click)='getCourseDetail(course)'>
                                 <div class="course_image">
                                     <!-- <img src="../../../assets/images/course_4.jpg" alt=""> -->
-                                    
+                                    <i class='far fa-question-circle' (click)="enquiry()"></i>
                                     <img height="100%" src="../../../assets/images/course_1.jpg" alt="" *ngIf="course.picture == null">
                                     <img [src]="course.full_path_picture" alt="" *ngIf="course.picture != null">
                                 </div>
@@ -65,11 +65,8 @@
                                     <div class="row">
                                         <div class="course-body-title col-12">
                                             <div class="row">
-                                                <div class="col-10">
+                                                <div class="col">
                                                     <h3 class=" px-3 course_title align-item-center"><a>{{course.course_title}}</a></h3>
-                                                </div>
-                                                <div class="col-2 align-items-center d-flex justify-content-start" (click)="enquiry()">
-                                                    <i class='far fa-question-circle' style='font-size:24px'></i>
                                                 </div>
                                             </div>
                                             <div class="px-3 course_teacher">Mr. John Taylor</div>

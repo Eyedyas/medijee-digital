@@ -1,6 +1,9 @@
 .fs-1 {
   font-size: 1em !important;
 }
+.fs-75 {
+  font-size: 1.2em !important;
+}
 
 .mt-lg-7 {
   margin-top: 7rem;
@@ -18,7 +21,14 @@
 }
 
 .product-media {
-  background-color: #aaeafd;
+  background-color: #f2f2f2;
+  height: 100%;
+  padding: 20px;
+}
+
+.product-body{
+  padding: 20px 10px;
+  height: 100%;
 }
 
 .pr-4 {
@@ -26,8 +36,10 @@
 }
 
 .product-media img {
-  width: 70%;
+  width: 90px;
   margin: 0 auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 .advanced {

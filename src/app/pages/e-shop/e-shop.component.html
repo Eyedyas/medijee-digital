@@ -33,7 +33,7 @@
                             required="required">
                         <select (change)="filterCourses($event)" [(ngModel)]="searchTextEl" id="courses_search_select" class="courses_search_select courses_search_input">
                             <option value="" selected>All Categories</option>
-                            <option *ngFor='let shop of eShop.slice(0,5)' [ngValue]="shop.asset_name">{{shop.asset_name}}</option>
+                            <option *ngFor='let shop of eShop' [ngValue]="shop.asset_name">{{shop.asset_name}}</option>
                         </select>
                     </div>
                 </div>

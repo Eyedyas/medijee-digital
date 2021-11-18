@@ -137,7 +137,9 @@
 
             <li class="menu_mm"><a routerLink='/blogs'>Blogs</a></li>
             <li class="menu_mm"><a routerLink='/about-medijee'>About</a></li>
-            <li class="menu_mm"><a routerLink='/login'>login</a></li>
+            <li class="menu_mm"><a *ngIf="user" routerLink='/my-account'>My Account</a></li>
+            <li class="menu_mm"><a *ngIf="!user" routerLink='/login'>Login / Sign-Up</a></li>
+
         </ul>
     </nav>
 </div>
