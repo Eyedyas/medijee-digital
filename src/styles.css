@@ -74,3 +74,13 @@ div.breadcrumbs li {
   margin-right: 5px;
   color: #424242 !important;
 }
+div.page-content ul.nav-dashboard a {
+  padding-left: 10px !important;
+}
+div.page-content ul.nav-dashboard :is(a.active) {
+  color: white !important;
+  background: #14bdee !important;
+}
+.pl10 {
+  padding-left: 10px !important;
+}

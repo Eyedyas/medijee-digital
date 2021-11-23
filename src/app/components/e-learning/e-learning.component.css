@@ -29,3 +29,6 @@ div.feature_icon img {
 h3.feature_title:hover {
   color: #14bdee !important;
 }
+div.feature {
+  cursor: pointer;
+}

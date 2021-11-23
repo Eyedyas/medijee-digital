@@ -15,6 +15,9 @@ export class CourseComponent implements OnInit {
   cartItem: any = [];
   DownloadImage = environment.DownloadImage;
   product: any = {};
+  course_price: number = 1000;
+  course_first_pay: number = (this.course_price * 10) / 100;
+  course_remaining_price = this.course_price - this.course_first_pay
 
   pk_course_id: number;
   constructor(

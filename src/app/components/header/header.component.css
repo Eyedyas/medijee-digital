@@ -50,4 +50,5 @@ li.dropdown a.dropdown-toggle:hover {
 }
 .header.scrolled {
   top: -40px;
+  padding-top: 40px;
 }

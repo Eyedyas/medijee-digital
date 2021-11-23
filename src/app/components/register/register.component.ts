@@ -89,7 +89,7 @@ export class RegisterComponent implements OnInit {
         this.navCtrl.navigateForward('/dashboard');
       }
       else {
-        this.navCtrl.navigateForward('/home-v2');
+        this.navCtrl.navigateForward('/home');
       }
     });
   }

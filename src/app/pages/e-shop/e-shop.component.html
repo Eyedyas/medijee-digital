@@ -41,10 +41,15 @@
                 <div class="courses_container">
                     <div class="row courses_row">
 
+                        
+
+
+
                         <!-- Course -->
-                        <div class="col-lg-4 course_col" *ngFor='let shop of eShop | filter:searchText | filter: searchTextEl'>
+                        <div class="col-lg-4 col-md-6 col-12 course_col" *ngFor='let shop of eShop | filter:searchText | filter: searchTextEl'>
                             <div class="course" (click)="productDetail(shop)">
                                 <div class="course_image">
+                                    <!-- <i class='far fa-question-circle' (click)="enquiry()"></i> -->
                                     <img src="../../../assets/images/course_4.jpg" alt="" *ngIf="shop.logo == null">
                                     <img [src]="imageUrl + shop.logo" alt="" *ngIf="shop.logo != null">
 
@@ -53,22 +58,13 @@
                                     <div class="row">
                                         <div class="course-body-title col-12">
                                             <h3 class="course_title"><a>{{shop.asset_name}}</a></h3>
-                                            <div class="course_teacher">{{shop.course_name}}</div>
+                                            <div class="course_teacher">{{shop.display_asset}}</div>
                                             <div *ngIf='!shop.summary' class="course_text">
                                                 <p>{{summary | slice:0:80 }}..</p>
                                             </div>
                                             <div *ngIf='shop.summary' class="course_text">
                                                 <p>{{ shop.summary | slice:0:80 }}..</p>
                                             </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="course-enq-detl-btn row justify-content-around">
-                                        <div class="col-4">
-                                            <button class="comment_button trans_200">Enquiry</button>
-                                        </div>
-                                        <div class=" col-4 px-0">
-                                            <button class="comment_button trans_200">Details</button>
                                         </div>
                                     </div>
                                 </div>

@@ -3,7 +3,7 @@
     <div class="counter_background" style="background-image:url(../../../assets/images/counter_background.jpg)"></div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6 col-12">
                 <div class="counter_content">
                     <h2 class="counter_title">Enquiry</h2>
                     <div class="counter_text">
@@ -44,27 +44,35 @@
                 </div>
 
             </div>
-        </div>
-
-        <div class="counter_form">
-            <div class="row fill_height">
-                <div class="col fill_height">
-                    <form [formGroup]="enquiryRequestform" class="counter_form_content d-flex flex-column align-items-center justify-content-center"
-                        (ngSubmit)="onSubmit(enquiryRequestform.value)" novalidate>
-                        <div class="counter_form_title">Enquiry</div>
-                        <input formControlName="name" type="text" class="counter_input" placeholder="Your Name:" required="required">
-                        <input formControlName="phone" type="tel" class="counter_input" placeholder="Phone:" required="required">
-                        <select [(ngModel)]="course_title" formControlName="course_title" (change)="getCoursesFilter($event)" name="counter_select" id="counter_select" class="counter_input counter_options">
-                            <option selected value="">Select Course</option>
-                            <option [ngValue]="course.course_title" *ngFor='let course of courses'>{{course.course_title}}</option>
-                        </select>
-                        <textarea formControlName="message" class="counter_input counter_text_input" placeholder="Message:"
-                            required="required"></textarea>
-                        <button type="submit" class="counter_form_button">submit now</button>
-                    </form>
-                </div>
+            <div class="col-lg-5 offset-md-2 offset-sm-0  offset-lg-1 col-md-4 col-12 col-sm-12">
+                        <div class="counter_form w-100">
+                            <div class="row fill_height">
+                                <div class="col fill_height">
+                                    <form [formGroup]="enquiryRequestform"
+                                        class="counter_form_content d-flex flex-column align-items-center justify-content-center"
+                                        (ngSubmit)="onSubmit(enquiryRequestform.value)" novalidate>
+                                        <div class="counter_form_title">Enquiry</div>
+                                        <input formControlName="name" type="text" class="counter_input" placeholder="Your Name:"
+                                            required="required">
+                                        <input formControlName="phone" type="tel" class="counter_input" placeholder="Phone:"
+                                            required="required">
+                                        <select [(ngModel)]="course_title" formControlName="course_title" (change)="getCoursesFilter($event)"
+                                            name="counter_select" id="counter_select" class="counter_input counter_options">
+                                            <option selected value="">Select Course</option>
+                                            <option [ngValue]="course.course_title" *ngFor='let course of courses'>{{course.course_title}}
+                                            </option>
+                                        </select>
+                                        <textarea formControlName="message" class="counter_input counter_text_input" placeholder="Message:"
+                                            required="required"></textarea>
+                                        <button type="submit" class="counter_form_button">submit now</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
             </div>
         </div>
+
+
 
     </div>
 </div>

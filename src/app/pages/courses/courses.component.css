@@ -320,11 +320,11 @@ div.course-enq-detl-btn {
   margin-top: 15px;
 }
 
-.fa-question-circle{
+.fa-question-circle {
   font-size: 26px;
-    position: absolute;
-    right: 0;
-    background: rgba(0,0,0,0.6);
-    padding: 5px;
-    color: #ededed;
+  position: absolute;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px;
+  color: #ededed;
 }
