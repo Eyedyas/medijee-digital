@@ -128,3 +128,6 @@ div.h50 {
     margin: auto;
   }
 }
+div.blog_post:hover {
+  cursor: pointer;
+}
