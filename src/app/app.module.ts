@@ -46,6 +46,7 @@ import { MyAccountComponent } from './pages/my-account/my-account.component';
 import { OrderComponent } from './pages/order/order.component';
 import { OrderDetailsComponent } from './pages/order-details/order-details.component';
 import { EnquiryFormComponent } from './components/enquiry-form/enquiry-form.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { EnquiryFormComponent } from './components/enquiry-form/enquiry-form.com
     OrderComponent,
     OrderDetailsComponent,
     EnquiryFormComponent,
+    GalleryComponent,
   ],
   imports: [
     HttpClientModule,

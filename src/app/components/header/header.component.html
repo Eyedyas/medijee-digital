@@ -19,10 +19,19 @@
                                     <i class="far fa-envelope mr-1" aria-hidden="true"></i>
                                     <div>info.deercreative@gmail.com</div>
                                 </li>
-                            </ul>                            
-                            <div class="top_bar_login ml-auto" *ngIf="!user">
-                                <div class="login_button"><a routerLink='/login' routerLinkActive="router-link-active">Register or Login</a></div>
+                            </ul>
+                            
+                            <div class="header-social">
+                                <ul>
+                                    <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                                </ul>
                             </div>
+
+                           <!--  <div class="top_bar_login ml-auto" *ngIf="!user">
+                                <div class="login_button"><a routerLink='/login' routerLinkActive="router-link-active">Student Login</a></div>
+                            </div> -->
 
                             <div class="top_bar_login ml-auto"  *ngIf="!user">
                                 <div class="login_button"><a href="https://edusome-student-portal.web.app/" target="_blank" routerLinkActive="router-link-active">Student Login</a></div>
@@ -70,6 +79,7 @@
                                     <ul class="dropdown-menu main_nav">
                                         <li><a class="dropdown-item" routerLink='/about-chairman'>Chairman Message</a></li>
                                         <li><a class="dropdown-item" routerLink='/about-medijee'>Medijee Digital</a></li>
+                                        <li><a class="dropdown-item" routerLink='/gallery'>Photo Gallery</a></li>
                                     </ul>
                                 </li>
                                 <li><a routerLink='/contact' routerLinkActive="router-link-active">Contact</a></li>

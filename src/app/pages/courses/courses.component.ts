@@ -31,7 +31,7 @@ export class CoursesComponent implements OnInit {
     await loading.present();
     this.commonSer.getCourses().subscribe(res => {
       loading.dismiss()
-      this.courses = res.Items.reverse();
+      this.courses = res.Items.filter((item) => item.status === "Active").reverse();
       console.log(this.courses)
     })
   }

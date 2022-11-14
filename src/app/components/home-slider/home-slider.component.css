@@ -241,3 +241,28 @@
     display: none;
   }
 }
+
+ion-slides{
+  margin-top: 8rem;
+}
+
+
+img{
+  height: 430px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.backBtn, .nextBtn{
+  font-size: 2rem;
+  color: #0ca2cd;
+  cursor: pointer;
+}
+
+.backBtn.disabled, .nextBtn.disabled{
+  font-size: 2rem;
+  pointer-events: none;
+  cursor: not-allowed;
+  color: #ebebeb;
+  margin-top: 5rem;
+}

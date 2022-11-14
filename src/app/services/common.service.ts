@@ -27,6 +27,7 @@ export class CommonService {
   // public iid: any = 20;
 
   private baseurl = environment.Baseurl;
+  private institute_id = environment.instituteId;
 
   constructor(
     private http: HttpClient,
@@ -192,6 +193,40 @@ export class CommonService {
       .pipe(map((resp: any) => {
         return resp.json();
       }));
+  }
+
+  SRNEmail(name: string, sender_email: string, message: string, phone:any) {
+    const url = this.baseurl + '/api/SRNEmail?name=' + name + '&sender_email=' + sender_email + '&message=' + message + '&phone=' + phone + '&institute_id=' + this.institute_id;
+    return this.http.get(url)
+      .pipe(map((resp: any) => {
+        return resp.json();
+      }));
+  }
+
+  contactUs(value: any) {
+    const url = this.baseurl + '/api/Enquiry/EnquiryV2';
+    return this.http.post(url, value)
+      .pipe(map((resp: any) => {
+        console.log(resp);
+        return resp;
+      }));
+  }
+
+  getInstituteSlider(){
+    const url = this.baseurl + '/InstituteMobileSlider?institute_id=' + this.institute_id;
+    return this.http.get(url)
+      .pipe(map((resp: any) => {
+        return resp;
+      }), catchError(this.errorHandler));
+
+  }
+
+  getGallery(){
+    const url = this.baseurl + '/Gallery?institute_id=' + this.institute_id;
+    return this.http.get(url)
+      .pipe(map((resp: any) => {
+        return resp;
+      }), catchError(this.errorHandler));
   }
 
 }

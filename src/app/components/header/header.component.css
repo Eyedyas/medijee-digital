@@ -52,3 +52,15 @@ li.dropdown a.dropdown-toggle:hover {
   top: -40px;
   padding-top: 40px;
 }
+.header-social ul{
+  display: flex;
+}
+.header-social ul li{
+    margin: 5px;
+}
+.header-social ul li a{
+  color: white;
+}
+.header-social ul li a:hover{
+  color: rgb(230, 230, 230);
+}

@@ -10,3 +10,8 @@
 .mt47 {
   margin-top: 47px;
 }
+
+.modal-header h5{
+  text-align: center;
+  font-size: 14px;
+}

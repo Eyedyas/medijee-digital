@@ -120,7 +120,7 @@ div.course:hover {
   overflow: hidden;
 }
 h3.course_title {
-  height: 10vh;
+  margin-top: 1.5rem;
   align-items: center;
   display: flex;
 }
@@ -327,4 +327,9 @@ div.course-enq-detl-btn {
   background: rgba(0, 0, 0, 0.6);
   padding: 5px;
   color: #ededed;
+}
+
+a.read-more{
+  text-decoration: none !important;
+  color: blue !important;
 }

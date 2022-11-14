@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Platform, NavController, AlertController, LoadingController, IonSlides } from '@ionic/angular';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-home-slider',
@@ -8,35 +10,44 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class HomeSliderComponent implements OnInit {
 
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    autoplay: false,
-    dots: true,
-    navSpeed: 700,
-    navText: ['', ''],
-    responsive: {
-      0: {
-        items: 4
-      },
-      400: {
-        items: 3
-      },
-      740: {
-        items: 1
-      },
-      940: {
-        items: 1
-      }
-    },
-    nav: false
-  }
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400
+  };
+  slidesData = [];
 
-  constructor() { }
+  @ViewChild('slides', {static: true}) slides: IonSlides; 
+
+  slideIndex:number = 1;
+
+  constructor(
+    private platform: Platform,
+    public navCtrl: NavController,
+    private commonService: CommonService,
+    public alertCtrl: AlertController,
+    private loadingCtrl: LoadingController) { 
+      this.getBanners();
+    }
 
   ngOnInit(): void {
+  }
+
+  slideChanged(e: any, slides) {
+    slides.getActiveIndex().then((index: number) => {
+        this.slideIndex = index + 1;
+    });
+  }
+
+  async getBanners(){
+    const loading = await this.loadingCtrl.create({
+      message: 'Please wait...',
+    });
+    await loading.present();
+    
+    this.commonService.getInstituteSlider().subscribe((resp) => {
+      this.slidesData = resp.Items;
+      loading.dismiss();
+    });
   }
 
 }

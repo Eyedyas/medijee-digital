@@ -28,7 +28,7 @@ export class EShopComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getCourse();
+    //this.getCourse();
   }
 
   async getCourse() {

@@ -41,7 +41,7 @@ export class EnquiryFormComponent implements OnInit {
 
     this.enquiryRequestform = this.formBuilder.group({
       fk_enquiry_category_id: ["Courses", Validators.compose([Validators.required])],
-      email: [this.user.student_email, Validators.compose([Validators.required])],
+      email: [this.user?.student_email, Validators.compose([Validators.required])],
       name: ['', Validators.compose([Validators.required])],
       message: ['', Validators.compose([Validators.required])],
       phone: ['', Validators.compose([Validators.required])],

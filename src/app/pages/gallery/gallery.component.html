@@ -1,0 +1,10 @@
+<ion-grid style="margin-top: 8rem">
+    <ion-row>
+        <ion-col *ngFor="let item of imageGallery; let i = index" size="12" size-sm="12" size-md="4">
+            <ion-card>
+                <div class="background" [style.background-image]="'url('+item.full_path+')'"></div>
+                <img [src]="item.full_path" />
+            </ion-card>
+        </ion-col>
+    </ion-row>
+</ion-grid>

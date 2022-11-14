@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-e-learning',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ELearningComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  goToStackHolder(stackholder){
+    console.log(stackholder)
+    this.router.navigate(['/stackholder'], { state: { stackholder: stackholder } })
+
   }
 
 }

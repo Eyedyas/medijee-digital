@@ -309,7 +309,7 @@ section {
 
 .header_container {
   width: 100%;
-  background: #ffffff;
+  background: #2f5790 !important;
 }
 .header_content {
   height: 90px;
@@ -389,12 +389,15 @@ section {
 .main_nav li a {
   font-size: 16px !important;
   font-weight: 500;
-  color: #384158;
+  color: #fff !important;
   -webkit-transition: all 200ms ease;
   -moz-transition: all 200ms ease;
   -ms-transition: all 200ms ease;
   -o-transition: all 200ms ease;
   transition: all 200ms ease;
+}
+.dropdown-menu a.dropdown-item {
+  color: #2f5790 !important;
 }
 .main_nav li a:hover,
 .main_nav li.active a {
@@ -1577,7 +1580,7 @@ section {
   display: block;
   position: relative;
   width: 100%;
-  background: #1e2434;
+  background: #23416a !important;
   padding-top: 94px;
 }
 .footer_background {

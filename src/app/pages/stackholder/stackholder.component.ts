@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { CommonService } from 'src/app/services/common.service';
 
@@ -11,8 +12,9 @@ import { CommonService } from 'src/app/services/common.service';
 export class StackholderComponent implements OnInit {
 
   contactForm: FormGroup;
+  stackholder: any = this.router.getCurrentNavigation().extras.state.stackholder;
 
-  constructor(private loadingCtrl: LoadingController, private formBuilder: FormBuilder, private commonService: CommonService) { }
+  constructor(private router: Router, private loadingCtrl: LoadingController, private formBuilder: FormBuilder, private commonService: CommonService) { }
 
 
   ngOnInit(): void {

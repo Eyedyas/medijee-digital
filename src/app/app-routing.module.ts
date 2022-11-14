@@ -23,6 +23,7 @@ import { EShopComponent } from './pages/e-shop/e-shop.component';
 import { AddressFormComponent } from './pages/address-form/address-form.component';
 import { MyAccountComponent } from './pages/my-account/my-account.component';
 import { OrderDetailsComponent } from './pages/order-details/order-details.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -49,6 +50,7 @@ const routes: Routes = [
   { path: 'fee-structure', component: FeeStructureComponent },
   { path: 'admission-procedure', component: AdmissionProcedureComponent },
   { path: 'admission-form', component: DownloadAdmissionFormComponent },
+  { path: 'gallery', component: GalleryComponent },
   { path: '**', component: HomeComponent },
 ];
 

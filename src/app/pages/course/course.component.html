@@ -29,27 +29,29 @@
 
                 <div class="course_container">
                     <div class="course_title">{{course.course_title}}</div>
-                    <div class="course_info d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+<!--                     <div class="course_info d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
 
-                        <!-- Course Info Item -->
                         <div class="course_info_item">
                             <div class="course_info_title">Course:</div>
                             <div class="course_info_text ml-2 ml-md-0"><a href="#"> {{product.course_name}} </a></div>
                         </div>
                         
-                        <!-- Course Info Item -->
                         <div class="course_info_item">
                             <div class="course_info_title">Categories:</div>
                             <div class="course_info_text ml-2 ml-md-0"><a href="#"> {{product.display_asset}}</a></div>
                         </div>
 
 
-                    </div>
+                    </div> -->
 
                     <!-- Course Image -->
-                    <div class="course_image"><img src="../../../assets/images/course_image.jpg" alt=""></div>
-
-                    <!-- Course Tabs -->
+                    <div class="course_image">
+                        <img height="100%" src="../../../assets/images/course_1.jpg" alt="" *ngIf="course.picture == null">
+                        <img [src]="DownloadImage +''+ course.picture" alt="" *ngIf="course.picture != null">
+    
+                    </div>
+                   
+                    <!-- Course Tabs --> 
                     <div class="course_tabs_container">
                         <div class="tabs d-flex flex-row align-items-center justify-content-start">
                             <!-- <div class="tab active">description</div>

@@ -33,7 +33,7 @@
                                         <h3 class=" px-3 course_title align-item-center"><a>{{course.course_title}}</a></h3>
                                     </div>
                                 </div>
-                                <div class="px-3 course_teacher">Mr. John Taylor</div>
+                                <!-- <div class="px-3 course_teacher">Mr. John Taylor</div> -->
                                 <div *ngIf='!course.summary || course.summary=="NULL"' class="px-3 course_text">
                                     <p>{{summary | slice:0:80 }}..</p>
                                 </div>
