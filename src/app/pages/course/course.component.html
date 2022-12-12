@@ -46,8 +46,8 @@
 
                     <!-- Course Image -->
                     <div class="course_image">
-                        <img height="100%" src="../../../assets/images/course_1.jpg" alt="" *ngIf="course.picture == null">
-                        <img [src]="DownloadImage +''+ course.picture" alt="" *ngIf="course.picture != null">
+                        <img height="100%" src="../../../assets/images/course_1.jpg" alt="" *ngIf="course?.picture == null">
+                        <img [src]="DownloadImage +''+ course?.picture" alt="" *ngIf="course?.picture != null">
     
                     </div>
                    
@@ -71,14 +71,22 @@
                 <div class="sidebar">
 
                     <div class="sidebar_section">
-                        <div class="sidebar_section_title">Course Feature</div>
+                        <div class="sidebar_section_title">Course Fee</div>
                         <div class="sidebar_feature">
-                            <div class="course_price"><small style="color: black; font-size:12px; opacity:.3;">Course Price:</small> ₹ {{ course_price }}/-</div>
-                            <div class="course_price"><small style="color: black; font-size:12px;">Course First Payment:</small> ₹ {{ course_first_pay }}/-</div>
-                            <div class="course_price"><small style="color: black; font-size:12px;opacity:.3;">Course Remaining Amount:</small> ₹ {{ course_remaining_price }}/-</div>
+                            <div class="course_price">
+                                
+                                <small *ngIf="totalFees" style="color: black; font-size:12px; opacity:.3;">Course Price:</small> 
+                                
+                                <span *ngIf="totalFees"> ₹ {{ totalFees }}/- <span style="font-size:12px">(excluding GST)</span></span>
+                                <span *ngIf="!totalFees" style="color: black; font-size:16px; opacity:.3;">Please contact us for Fee Details</span>
+
+                            
+                            </div>
+                            <!-- <div class="course_price"><small style="color: black; font-size:12px;">Course First Payment:</small> ₹ {{ course_first_pay }}/-</div>
+                            <div class="course_price"><small style="color: black; font-size:12px;opacity:.3;">Course Remaining Amount:</small> ₹ {{ course_remaining_price }}/-</div> -->
 
                             <!-- Features -->
-                            <div class="feature_list">
+                            <!-- <div class="feature_list">
 
                                 <div class="feature p-0 d-flex flex-row align-items-center justify-content-start">
                                     <div class="feature_title mt-0"><i class="far fa-clock"></i><span>Duration:</span></div>
@@ -102,22 +110,10 @@
                                 </div>
                                 <div class="feature d-flex flex-row p-0 align-items-center justify-content-center">
                                     <div class="feature_title mt-0 pt-0 cart-button my-2 ">
-                                        <!-- <ion-row class="w-100" class="bottom-tabs"> -->
-                                            <!-- <ion-col> -->
-                                                <button type="submit" class="comment_button trans_200" (click)="addItemInCart(product)" *ngIf="!checkItemStatusInCart(product)">ADD TO BAG</button>
-                                                <button type="submit" class="comment_button trans_200" (click)="goToCart(product)" *ngIf="checkItemStatusInCart(product)">GO TO BAG</button>
-                                                <!-- <ion-button class="regular-button w-100" (click)="addItemInCart(product)" *ngIf="!checkItemStatusInCart(product)">ADD TO BAG</ion-button>
-                                                <ion-button class="regular-button w-100" (click)="goToCart(product)" *ngIf="checkItemStatusInCart(product)">GO TO BAG</ion-button> -->
-                                            <!-- </ion-col> -->
-                                            <!-- <ion-col>
-                                                <ion-button class="regular-button w-100" (click)="goEnquiry()">ENQUIRY</ion-button>
-                                            </ion-col> -->
-                                        <!-- </ion-row> -->
                                     </div>
-                                    <!-- <div class="feature_text ml-auto">35</div> -->
                                 </div>
 
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <!-- Latest Course -->
@@ -126,38 +122,13 @@
                         <div class="sidebar_latest">
 
                             
-                            <div class="latest d-flex flex-row align-items-start justify-content-start">
+                            <div class="latest d-flex flex-row" style="align-items: center !important;"  *ngFor="let course of courses" (click)="getCourseDetails(course.pk_course_id)">
                                 <div class="latest_image">
-                                    <div><img src="../../../assets/images/latest_1.jpg" alt=""></div>
+                                    <div><img [src]="course.full_path_picture" alt="" style="height: 100%; object-fit: contain;"></div>
                                 </div>
                                 <div class="latest_content">
-                                    <div class="latest_title"><a href="course.html">How to Design a Logo a Beginners
-                                            Course</a></div>
-                                    <div class="latest_price">Free</div>
-                                </div>
-                            </div>
-
-                            
-                            <div class="latest d-flex flex-row align-items-start justify-content-start">
-                                <div class="latest_image">
-                                    <div><img src="../../../assets/images/latest_2.jpg" alt=""></div>
-                                </div>
-                                <div class="latest_content">
-                                    <div class="latest_title"><a href="course.html">Photography for Beginners
-                                            Masterclass</a></div>
-                                    <div class="latest_price">$170</div>
-                                </div>
-                            </div>
-
-                            
-                            <div class="latest d-flex flex-row align-items-start justify-content-start">
-                                <div class="latest_image">
-                                    <div><img src="../../../assets/images/latest_3.jpg" alt=""></div>
-                                </div>
-                                <div class="latest_content">
-                                    <div class="latest_title"><a href="course.html">The Secrets of Body Language</a>
-                                    </div>
-                                    <div class="latest_price">$220</div>
+                                    <div class="latest_title"><a>{{course.course_title}}</a></div>
+                                    <!-- <div class="latest_price">Free</div> -->
                                 </div>
                             </div>
 

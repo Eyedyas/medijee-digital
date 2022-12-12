@@ -40,6 +40,7 @@
 }
 .milestone {
   text-align: center;
+  height: 100px;
 }
 .milestone:not(:last-child)::after {
   display: block;
@@ -67,7 +68,9 @@
   font-weight: 400;
   color: #ffffff;
   text-transform: uppercase;
-  margin-top: 14px;
+  margin-top: 10px;
+  line-height: 22px;
+  padding: 10px;
 }
 .counter_form {
   position: absolute;
@@ -194,4 +197,25 @@
     padding-top: 50px;
     padding-bottom: 50px;
   }
+
+  #experience{
+    right: 66px !important;
+  }
+  #years{
+    right: 86px !important;
+  }
+  #presence{
+    right: 74px !important;
+  }
+
+
+}
+
+.sign{
+  position: absolute;
+  right: -15px;
+  top: -10px;
+  color: #14bdee;
+  font-size: 20px;
+  font-weight: 800;
 }

@@ -171,14 +171,6 @@ div.course {
   font-weight: 700;
   color: #14bdee;
 }
-.course_price span {
-  font-family: "Roboto Slab", serif;
-  font-size: 14px;
-  font-weight: 400;
-  text-decoration: line-through;
-  color: #b5b8be;
-  margin-right: 10px;
-}
 .courses_button {
   width: 210px;
   height: 46px;

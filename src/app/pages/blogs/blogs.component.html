@@ -26,18 +26,17 @@
                     <div class="blog_post_image h50"><img height="100%" src="{{blog.full_path_banner_image}}" alt=""></div>
                     <div class="blog_post_body">
                         <div class="blog_post_title"><a>
-                        {{blog.abstracts}}
+                        {{blog.title}}
                         </a></div>
                         <div class="blog_post_meta">
-                            <ul>
-                                <li><a href="#">admin</a></li>
-                                <li><a href="#">november 11, 2017</a></li>
+                            <ul class="p-0">
+                                <li><a>{{ blog.displaye_added_datetime }}</a></li>
                             </ul>
                         </div>
                         <div class="blog_post_text">
-                            <p>Policy analysts generally agree on a need for reform, but not on which path
-                                policymakers should take...</p>
+                                <p>{{ blog.abstracts }}</p>
                         </div>
+                        <div class="news_post_link" style="margin-top: 5px;"><a class="read-more" (click)="getBlogDetail(blog)">Read more</a></div>
                     </div>
                 </div>
             </div>

@@ -31,9 +31,8 @@
                         {{blog.abstracts}}
                     </div>
                     <div class="blog_meta">
-                        <ul>
-                            <li>Post on <a href="#">May 5, 2018</a></li>
-                            <li>By <a href="#">admin</a></li>
+                        <ul class="p-0">
+                            <li>Post on <a>{{ blog.added_datetime | date: 'dd-MM-yyyy, h:mm a' }}</a></li>
                         </ul>
                     </div>
                     <div class="blog_image"><img src="{{blog.full_path_banner_image}}" alt=""></div>

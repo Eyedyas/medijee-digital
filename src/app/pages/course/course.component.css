@@ -151,3 +151,12 @@ div.course_image img {
     margin-top: 0;
   }
 }
+
+.latest{
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.latest:hover{
+  background: rgb(234, 234, 234);
+}

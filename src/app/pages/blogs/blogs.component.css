@@ -48,7 +48,7 @@ div.h50 {
   padding-left: 32px;
   padding-right: 30px;
   padding-top: 23px;
-  padding-bottom: 23px;
+  padding-bottom: 0;
 }
 .blog_post_title a {
   font-family: "Roboto Slab", serif;
@@ -71,13 +71,6 @@ div.h50 {
 .blog_post_meta ul li {
   display: inline-block;
   position: relative;
-}
-.blog_post_meta ul li:not(:last-of-type)::after {
-  display: inline-block;
-  position: relative;
-  content: "|";
-  margin-left: 14px;
-  margin-right: 11px;
 }
 .blog_post_meta ul li a {
   font-size: 14px;
@@ -130,4 +123,10 @@ div.h50 {
 }
 div.blog_post:hover {
   cursor: pointer;
+}
+
+a.read-more{
+  text-decoration: underline !important;
+  color: blue !important;
+  text-transform: none;
 }

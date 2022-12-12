@@ -229,4 +229,12 @@ export class CommonService {
       }), catchError(this.errorHandler));
   }
 
+  getSubject(bid, cid) {
+    const url = this.baseurl + '/Subject?institute_id=' + this.institute_id + '&branch_id=' + bid + '&course_id=' + cid;
+    return this.http.get(url)
+      .pipe(map((resp: any) => {
+        return resp;
+      }), catchError(this.errorHandler));
+  }
+
 }

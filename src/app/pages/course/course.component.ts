@@ -40,9 +40,38 @@ export class CourseComponent implements OnInit {
     await loading.present();
     this.commonService.getCourseDetails(pk_Product_id).subscribe(resp => {
       loading.dismiss()
-      this.course = resp.Item
+      this.course = resp.Item;
+      this.getSubject(this.course.fk_branch_id, this.course.pk_course_id);
       console.log('course title: ', this.course)
     });
+  }
+
+  totalFees = null;
+
+  async getSubject(branch_id, course_id){
+    const loading = await this.loadingCtrl.create({
+      message: 'Please wait...',
+    });
+    await loading.present();
+    this.commonService.getSubject(branch_id, course_id)
+      .subscribe(result => {
+        this.totalFees = result.Items[0]?.fees;
+        loading.dismiss();
+      });
+  }
+
+  courses = [];
+
+  async getCourse() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Please wait...',
+    });
+    await loading.present();
+    this.commonService.getCourses().subscribe(res => {
+      loading.dismiss()
+      this.courses = res.Items.filter((item) => item.status === "Active").reverse().slice(0, 3);
+      console.log(this.courses)
+    })
   }
 
 
@@ -131,6 +160,7 @@ export class CourseComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getCourse();
   }
 
 }
